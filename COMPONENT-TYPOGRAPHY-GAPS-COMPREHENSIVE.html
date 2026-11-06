@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Typography - COMPREHENSIVE GAPS & ADDITIONS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #0C2472;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(29, 78, 216, 0.08);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #EF4444;
+            border-bottom: 3px solid #FEE2E2;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 20px 0;
+            color: #0C2472;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: #0C2472;
+        }
+
+        .gap-card {
+            background: #FEE2E2;
+            border-left: 4px solid #EF4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .gap-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #991B1B;
+            margin-bottom: 12px;
+        }
+
+        .gap-description {
+            font-size: 14px;
+            color: #7F1D1D;
+            margin-bottom: 12px;
+        }
+
+        .solution-block {
+            background: #DBEAFE;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+
+        .solution-title {
+            font-weight: 700;
+            color: #0C2472;
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #EFF6FF;
+            color: #0C2472;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #E3ECFC;
+            font-size: 12px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #E3ECFC;
+            font-size: 13px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .spec-table th {
+            background: #FEE2E2;
+            color: #991B1B;
+            border-bottom-color: #FECACA;
+        }
+
+        .spec-table td {
+            border-bottom-color: #FECACA;
+        }
+
+        code {
+            background: #EFF6FF;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            color: #0C2472;
+        }
+
+        .code-block {
+            background: #0A0A0A;
+            color: #D4D4D8;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .critical {
+            background: #FEF2F2;
+            border: 2px solid #EF4444;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #991B1B;
+            margin-bottom: 12px;
+        }
+
+        .critical-text {
+            font-size: 13px;
+            color: #7F1D1D;
+            line-height: 1.8;
+        }
+
+        .critical-text li {
+            margin: 8px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 20px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 13px;
+        }
+
+        .visual-example {
+            background: #F8FAFC;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .example-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #1D4ED8;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        footer {
+            background: #F8FAFC;
+            padding: 30px 40px;
+            text-align: center;
+            color: #94A3B8;
+            border-top: 1px solid #E3ECFC;
+        }
+
+        .download-btn {
+            background: #1D4ED8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background: #0C2472;
+        }
+
+        .checklist {
+            background: #D1FAE5;
+            border-left: 4px solid #10B981;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .checklist-title {
+            font-weight: 700;
+            color: #065F46;
+            margin-bottom: 12px;
+        }
+
+        .checklist ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .checklist li {
+            margin: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚠️ CRITICAL GAPS IDENTIFIED</h1>
+            <p>Missing Component Typography Specifications</p>
+            <p class="subtitle">Comprehensive analysis of what was NOT covered in the Component Typography Specs document</p>
+        </header>
+
+        <div class="content">
+
+            <!-- INTRO SECTION -->
+            <section>
+                <h2>🔍 Critical Analysis Summary</h2>
+                <div class="critical">
+                    <div class="critical-title">What's Missing: 20+ Components & Specifications</div>
+                    <div class="critical-text">
+                        The initial Component Typography Specs covered basics (nav, sidebar, tables) but FAILED to document:
+                        <ul>
+                            <li><strong>Toolbar buttons</strong> (Filters, Columns, Sort) — No specifications</li>
+                            <li><strong>Search bar text</strong> — Font size undocumented</li>
+                            <li><strong>Tab navigation</strong> (Activity, Related tabs) — No font sizes</li>
+                            <li><strong>Record count</strong> ("12 of 12 records") — Missing entirely</li>
+                            <li><strong>Dropdown menus</strong> — No specifications for opened dropdown items</li>
+                            <li><strong>Pagination</strong> — No sizes documented</li>
+                            <li><strong>KPI card values</strong> (large numbers) — No documentation</li>
+                            <li><strong>Icon sizing</strong> — Completely missing</li>
+                            <li><strong>Hover states</strong> — Text color changes undocumented</li>
+                            <li><strong>Mobile responsive typography</strong> — No coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 1: TOOLBAR BUTTONS -->
+            <section>
+                <h2>GAP #1: Toolbar Buttons (Filters, Columns, Sort)</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        The Filters, Columns, and Sort buttons that appear above tables were never documented. These buttons have:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Inactive state styling</li>
+                            <li>Active state styling (when filter is applied)</li>
+                            <li>Hover state styling</li>
+                            <li>Text styling differences from nav buttons</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>State</th>
+                                    <th>Font Size</th>
+                                    <th>Weight</th>
+                                    <th>Color</th>
+                                    <th>Background</th>
+                                    <th>Border</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Inactive</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#0C2472</td>
+                                    <td>#E3ECFC</td>
+                                    <td>1px #E3ECFC</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Active</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#1D4ED8</td>
+                                    <td>#f9fbff</td>
+                                    <td>1px #1D4ED8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hover</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#1D4ED8</td>
+                                    <td>#f9fbff</td>
+                                    <td>1px #1D4ED8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dark Mode</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#D4D4D8 / #60A5FA (active)</td>
+                                    <td>#27272A / #3F3F46 (active)</td>
+                                    <td>1px #27272A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Additional specs:</strong> Padding: 10px 16px · Border radius: 6px · Gap between buttons: 8px · Margin-right: 8px for icon
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 2: SEARCH BAR -->
+            <section>
+                <h2>GAP #2: Search Bar & Search Input Text</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Search bars appear in multiple places (topbar, list pages) but font sizing was never documented. Missing:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Input text font size</li>
+                            <li>Placeholder text font size and color</li>
+                            <li>Search icon size and color</li>
+                            <li>Padding and height specifications</li>
+                            <li>Focus state styling</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Size</th>
+                                    <th>Weight</th>
+                                    <th>Color (Light)</th>
+                                    <th>Color (Dark)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Input Text</strong></td>
+                                    <td>14px</td>
+                                    <td>400</td>
+                                    <td>#0C2472</td>
+                                    <td>#D4D4D8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Placeholder Text</strong></td>
+                                    <td>14px</td>
+                                    <td>400</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Search Icon</strong></td>
+                                    <td>18px × 18px</td>
+                                    <td>—</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Clear Icon</strong></td>
+                                    <td>16px × 16px</td>
+                                    <td>—</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Search bar specs:</strong> Height: 40px · Padding: 10px 12px · Border: 1px #E3ECFC · Border radius: 6px · Background: #f9fbff
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 3: TAB NAVIGATION -->
+            <section>
+                <h2>GAP #3: Tab Navigation (Activity, Related, etc.)</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Detail pages have tab bars (Activity, Related Deals, Related Contacts tabs) but specifications were completely absent:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Tab font size — NOT documented</li>
+                            <li>Active tab styling — NOT specified</li>
+                            <li>Inactive tab styling — NOT specified</li>
+                            <li>Hover state — NOT documented</li>
+                            <li>Tab underline/border styling — NOT mentioned</li>
+                            <li>Tab counter badge size — NOT specified</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Tab State</th>
+                                    <th>Font Size</th>
+                                    <th>Weight</th>
+                                    <th>Text Color</th>
+                                    <th>Bottom Border</th>
+                                    <th>Background</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Active Tab</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#1D4ED8</td>
+                                    <td>2px #1D4ED8</td>
+                                    <td>transparent</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inactive Tab</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#94A3B8</td>
+                                    <td>2px transparent</td>
+                                    <td>transparent</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hover Tab</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#1D4ED8</td>
+                                    <td>2px transparent</td>
+                                    <td>rgba(29,78,216, 0.04)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tab Badge Count</strong></td>
+                                    <td>10px</td>
+                                    <td>700</td>
+                                    <td>white</td>
+                                    <td>—</td>
+                                    <td>#1D4ED8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Tab bar specs:</strong> Height: 44px · Padding: 12px 16px · Gap between tabs: 20px · Border bottom: 1px #E3ECFC
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 4: RECORD COUNT -->
+            <section>
+                <h2>GAP #4: Record Count Display ("12 of 12 records")</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Text showing "12 of 12 records" appears above tables and lists but was never documented. Missing:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Font size — NOT specified</li>
+                            <li>Font weight — NOT documented</li>
+                            <li>Text color — NOT documented</li>
+                            <li>Position and spacing — NOT mentioned</li>
+                            <li>Background styling — NOT specified</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th>Value (Light Mode)</th>
+                                    <th>Value (Dark Mode)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td>12px</td>
+                                    <td>12px</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Text Color</strong></td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Background</strong></td>
+                                    <td>#f9fbff</td>
+                                    <td>#18181B</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Border</strong></td>
+                                    <td>1px #E3ECFC</td>
+                                    <td>1px #27272A</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td>8px 12px</td>
+                                    <td>8px 12px</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Border Radius</strong></td>
+                                    <td>6px</td>
+                                    <td>6px</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Position:</strong> Above table, left side · Margin bottom: 12px · Display inline-block for right alignment option
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 5: ICON SIZING -->
+            <section>
+                <h2>GAP #5: Icon Sizing & Positioning</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Icons appear throughout the UI but sizing was COMPLETELY UNDOCUMENTED:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Navigation icons (beside menu text) — No size specified</li>
+                            <li>Button icons — No size specified</li>
+                            <li>Form field icons — No size specified</li>
+                            <li>Icon + text gap/spacing — NOT documented</li>
+                            <li>Icon color states (hover, disabled) — NOT documented</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Icon Type</th>
+                                    <th>Size</th>
+                                    <th>Color (Light)</th>
+                                    <th>Color (Dark)</th>
+                                    <th>Gap from Text</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nav Icon (Topbar)</strong></td>
+                                    <td>20px × 20px</td>
+                                    <td>#0C2472</td>
+                                    <td>#D4D4D8</td>
+                                    <td>10px</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nav Icon (Sidebar)</strong></td>
+                                    <td>20px × 20px</td>
+                                    <td>#0C2472</td>
+                                    <td>#D4D4D8</td>
+                                    <td>10px</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Button Icon</strong></td>
+                                    <td>18px × 18px</td>
+                                    <td>#0C2472 (primary) / white (button)</td>
+                                    <td>#D4D4D8 / white</td>
+                                    <td>8px</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Form Input Icon</strong></td>
+                                    <td>18px × 18px</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                    <td>12px (padding from edge)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Table Action Icon</strong></td>
+                                    <td>18px × 18px</td>
+                                    <td>#0C2472</td>
+                                    <td>#D4D4D8</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Badge/Pill Icon</strong></td>
+                                    <td>14px × 14px</td>
+                                    <td>inherit text color</td>
+                                    <td>inherit text color</td>
+                                    <td>6px</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Icon hover states:</strong> On interactive icons, change color to #1D4ED8 (light) / #60A5FA (dark) · Transition: 150ms ease
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 6: HOVER STATES TEXT COLOR -->
+            <section>
+                <h2>GAP #6: Hover States - Text Color Changes</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        When table rows, list items, or other elements are hovered, text colors may change, but this was NOT documented:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Table row hover — text color change NOT documented</li>
+                            <li>List item hover — text color change NOT documented</li>
+                            <li>Link hover — underline styling NOT complete</li>
+                            <li>Navigation hover — ALL effects NOT documented</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Default Text Color</th>
+                                    <th>Hover Background</th>
+                                    <th>Hover Text Color (Light)</th>
+                                    <th>Hover Text Color (Dark)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Table Row</strong></td>
+                                    <td>#0C2472</td>
+                                    <td>rgba(29, 78, 216, 0.04)</td>
+                                    <td>#0C2472 (NO CHANGE)</td>
+                                    <td>#D4D4D8 (NO CHANGE)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>List Item</strong></td>
+                                    <td>#0C2472</td>
+                                    <td>#f9fbff</td>
+                                    <td>#0C2472 (NO CHANGE)</td>
+                                    <td>#D4D4D8 (NO CHANGE)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sidebar Item</strong></td>
+                                    <td>#0C2472</td>
+                                    <td>rgba(29, 78, 216, 0.04)</td>
+                                    <td>#0C2472 (NO CHANGE)</td>
+                                    <td>#D4D4D8 (NO CHANGE)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Link (Text)</strong></td>
+                                    <td>#1D4ED8</td>
+                                    <td>transparent</td>
+                                    <td>#1D4ED8 + underline</td>
+                                    <td>#60A5FA + underline</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Button (Secondary)</strong></td>
+                                    <td>#1D4ED8</td>
+                                    <td>#E3ECFC</td>
+                                    <td>#1D4ED8 (NO CHANGE)</td>
+                                    <td>#60A5FA (NO CHANGE)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-top: 10px; font-size: 12px; color: #0C2472;">
+                            <strong>Hover transition:</strong> 150ms ease-in-out
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 7: KPI CARDS -->
+            <section>
+                <h2>GAP #7: KPI Card Values & Dashboard Numbers</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Dashboard KPI cards display large numbers (e.g., "12,983" for Active Leads) but font sizes were NEVER DOCUMENTED:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>KPI value (large number) font size — NOT specified</li>
+                            <li>KPI label (ACTIVE LEADS) font size — NOT documented</li>
+                            <li>KPI trend percentage — NOT specified</li>
+                            <li>KPI metric/secondary text — NOT documented</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Font Size</th>
+                                    <th>Weight</th>
+                                    <th>Color (Light)</th>
+                                    <th>Color (Dark)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>KPI Label</strong></td>
+                                    <td>12px</td>
+                                    <td>600</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KPI Value (Main Number)</strong></td>
+                                    <td>32px</td>
+                                    <td>800</td>
+                                    <td>#0C2472</td>
+                                    <td>#F4F4F5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KPI Trend Percentage</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#10B981 (up) / #EF4444 (down)</td>
+                                    <td>#10B981 (up) / #EF4444 (down)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>KPI Trend Text</strong></td>
+                                    <td>12px</td>
+                                    <td>500</td>
+                                    <td>#94A3B8</td>
+                                    <td>#9CA3AF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 8: PAGINATION -->
+            <section>
+                <h2>GAP #8: Pagination Controls</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        Pagination (Previous, 1, 2, 3, Next) was completely undocumented:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Page number font size — NOT specified</li>
+                            <li>Active page styling — NOT documented</li>
+                            <li>Inactive page styling — NOT documented</li>
+                            <li>Previous/Next button text — NOT specified</li>
+                            <li>Disabled pagination state — NOT documented</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Complete Specification</div>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Font Size</th>
+                                    <th>Weight</th>
+                                    <th>Color (Light)</th>
+                                    <th>Background</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Page Number (Active)</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>white</td>
+                                    <td>#1D4ED8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Page Number (Inactive)</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#0C2472</td>
+                                    <td>#f9fbff</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Prev/Next Button</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#0C2472</td>
+                                    <td>#f9fbff</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Disabled Button</strong></td>
+                                    <td>14px</td>
+                                    <td>600</td>
+                                    <td>#94A3B8</td>
+                                    <td>#E3ECFC</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAP 9: MOBILE RESPONSIVE -->
+            <section>
+                <h2>GAP #9: Mobile Responsive Typography</h2>
+
+                <div class="gap-card">
+                    <div class="gap-title">❌ What Was Missing</div>
+                    <div class="gap-description">
+                        On mobile screens (&lt; 640px), typography scaling was NEVER ADDRESSED:
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Topbar on mobile — font sizes NOT documented</li>
+                            <li>Sidebar collapse → mobile nav — NOT documented</li>
+                            <li>Table on mobile — columns NOT documented</li>
+                            <li>Font size scaling ratios — NOT specified</li>
+                        </ul>
+                    </div>
+
+                    <div class="solution-block">
+                        <div class="solution-title">✅ Mobile Typography Rules</div>
+                        <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px;">
+                            <div style="font-size: 13px; color: #0C2472; line-height: 1.8;">
+                                <strong>General Rule:</strong> Most font sizes stay the same on mobile (14px body, 12px labels, etc.). Only exception: Page Hero titles scale from 20px → 18px<br><br>
+
+                                <strong>Topbar on Mobile:</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li>Logo: 12px (down from 14px)</li>
+                                    <li>Navigation: Hidden, becomes hamburger icon (24×24px)</li>
+                                    <li>Topbar height: 56px (down from 60px)</li>
+                                </ul><br>
+
+                                <strong>Sidebar on Mobile:</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li>Sidebar: Hidden by default</li>
+                                    <li>Menu opens as drawer/modal overlay</li>
+                                    <li>Drawer width: min(320px, 90vw)</li>
+                                    <li>Font sizes: Same as desktop (14px for items)</li>
+                                </ul><br>
+
+                                <strong>Tables on Mobile:</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li>Display as stacked cards (NOT table)</li>
+                                    <li>Label: 11.5px UPPERCASE</li>
+                                    <li>Value: 14px</li>
+                                    <li>One column per row</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMPREHENSIVE CHECKLIST -->
+            <section>
+                <h2>📋 Comprehensive Typography Checklist</h2>
+                <div class="checklist">
+                    <div class="checklist-title">After these additions, you should have documentation for:</div>
+                    <ul>
+                        <li>Navigation bar (topbar) - ✓ Covered</li>
+                        <li>Sidebar navigation - ✓ Covered</li>
+                        <li>Topbar nav items (individual)</li>
+                        <li>Sidebar items (individual)</li>
+                        <li><strong>Toolbar buttons</strong> (Filters, Columns, Sort) - ✓ NOW ADDED</li>
+                        <li><strong>Search bar text</strong> - ✓ NOW ADDED</li>
+                        <li><strong>Tab navigation</strong> (Activity tabs) - ✓ NOW ADDED</li>
+                        <li><strong>Record count</strong> ("12 of 12") - ✓ NOW ADDED</li>
+                        <li><strong>Icon sizing</strong> (nav, buttons, forms) - ✓ NOW ADDED</li>
+                        <li><strong>Hover states</strong> (text color changes) - ✓ NOW ADDED</li>
+                        <li><strong>KPI card values</strong> (large numbers) - ✓ NOW ADDED</li>
+                        <li><strong>Pagination</strong> (page numbers) - ✓ NOW ADDED</li>
+                        <li>Breadcrumbs - ✓ Covered</li>
+                        <li>Page titles and headers - ✓ Covered</li>
+                        <li>Tables and list items - ✓ Covered</li>
+                        <li>Form elements - ✓ Covered</li>
+                        <li>Badges and status - ✓ Covered</li>
+                        <li>Buttons - ✓ Covered</li>
+                        <li>Modals and dialogs - ✓ Covered</li>
+                        <li><strong>Mobile responsive</strong> typography - ✓ NOW ADDED</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- MISSING STILL -->
+            <section>
+                <h2>⚠️ Still Potentially Missing (Edge Cases)</h2>
+                <p style="color: #0C2472; margin-bottom: 20px;">
+                    Even with all additions above, these edge cases MIGHT need documentation:
+                </p>
+
+                <div class="gap-card">
+                    <ul style="margin-left: 20px;">
+                        <li><strong>Tooltips</strong> — Font size for hover tooltips (probably 12px)</li>
+                        <li><strong>Alert messages</strong> — Error/success alerts at top of page (probably 14px)</li>
+                        <li><strong>Empty states</strong> — "No records found" message (probably 16px heading + 14px body)</li>
+                        <li><strong>Loading states</strong> — "Loading..." text overlay (probably 14px)</li>
+                        <li><strong>Dropdown menus</strong> — When clicking a button that opens menu (probably 14px items)</li>
+                        <li><strong>Charts/Graphs</strong> — Axis labels, legends (probably 12px)</li>
+                        <li><strong>Inline validation</strong> — "This field is required" inline text (probably 12px, red)</li>
+                        <li><strong>Help text/tooltips</strong> — Question mark icon with help text (probably 12px)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- FINAL RECOMMENDATION -->
+            <section>
+                <h2>✅ Final Recommendation</h2>
+                <div class="critical" style="background: #D1FAE5; border-color: #10B981;">
+                    <div class="critical-title" style="color: #065F46;">Complete Documentation Strategy</div>
+                    <div class="critical-text" style="color: #065F46;">
+                        <ol>
+                            <li><strong>Take the initial Component Typography Specs document</strong></li>
+                            <li><strong>Add ALL 9 gaps documented above</strong> (Toolbar buttons, Search bar, Tabs, Record count, Icons, Hover states, KPI cards, Pagination, Mobile responsive)</li>
+                            <li><strong>Create a final "Master Typography Reference"</strong> that combines:
+                                <ul style="margin-left: 20px; margin-top: 8px;">
+                                    <li>All 7 semantic tiers (10px-20px)</li>
+                                    <li>All 25+ UI components with exact specifications</li>
+                                    <li>All states (default, hover, active, disabled, dark mode)</li>
+                                    <li>All spacing and padding</li>
+                                    <li>All icon sizing</li>
+                                    <li>Mobile responsive rules</li>
+                                </ul>
+                            </li>
+                            <li><strong>Result:</strong> ONE comprehensive document that has ZERO gaps and can serve as the single source of truth for all typography across the application</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 13px;">
+                <strong>Component Typography - Critical Gaps Analysis</strong><br>
+                <strong>Status:</strong> 20+ missing specifications identified and documented<br>
+                <strong>Next Step:</strong> Integrate these additions into master reference
+            </p>
+            <button class="download-btn" onclick="downloadHTML()">📥 Download Gap Analysis</button>
+            <p style="margin-top: 15px; font-size: 11px; color: #9CA3AF;">
+                This document identifies exactly what was missing from the initial Component Typography Specs and provides complete specifications for each gap.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Component-Typography-Gaps-Comprehensive.html';
+            link.click();
+        }
+    </script>
+</body>
+</html>

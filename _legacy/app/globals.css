@@ -1,0 +1,340 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../styles/shadcn-base.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ════════════════════════════════════════════════════════════════════
+   EVOQ CRM design tokens — the ONLY place colours are defined.
+   Palette: CRM product palette (handoff §5.1 / CRM Brand Book). Do not use
+   the general EVOQ website palette or competitor colours here.
+
+   Accessibility deviation (documented in docs/ARCHITECTURE.md): the brand
+   book shows white text on #60A5FA for primary hover (≈2.5:1, fails WCAG
+   AA). Primary hover therefore darkens toward Depth; #60A5FA ("hover") is
+   used for hover borders, outlines and accents only.
+   ════════════════════════════════════════════════════════════════════ */
+:root {
+  /* CRM blue scale */
+  --crm-depth: #0c2472;
+  --crm-primary: #1d4ed8;
+  --crm-action: #3b82f6;
+  --crm-hover: #60a5fa;
+  --crm-soft: #93c5fd;
+  --crm-tint: #e3ecfc;
+  --crm-surface: #eff6ff;
+
+  /* Neutrals (handoff §6) */
+  --n-bg: #f8fafc;
+  --n-border: #e6eaf0;
+  --n-text: #1f2430;
+  --n-muted: #5f6b7a;
+  --n-faint: #94a3b8;
+
+  /* Semantic status — always paired with text and/or icon, never colour alone */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --neutral: #6b7280;
+  --success-fg: #047857;
+  --success-bg: #ecfdf5;
+  --warning-fg: #92400e;
+  --warning-bg: #fffbeb;
+  --error-fg: #b91c1c;
+  --error-bg: #fef2f2;
+  --neutral-fg: #4b5563;
+  --neutral-bg: #f3f4f6;
+  --info-fg: var(--crm-depth);
+  --info-bg: var(--crm-surface);
+
+  /* Text roles */
+  --title: var(--crm-depth);
+  --ink: var(--n-text);
+  --ink-body: #334155;
+  --ink-muted: var(--n-muted);
+  --ink-faint: var(--n-faint);
+
+  --border-color: var(--n-border);
+  --border-soft: #eef2f7;
+  --card-shadow: 0 1px 2px rgb(12 36 114 / 0.04), 0 1px 3px rgb(12 36 114 / 0.05);
+  --pop-shadow: 0 12px 40px rgb(12 36 114 / 0.16);
+
+  /* Canvas: atmospheric, never structural. White surfaces sit on top. */
+  --canvas-base: linear-gradient(180deg, #f5f8ff 0%, #f1f5fd 55%, #eef1fb 100%);
+  --canvas-glow-1: radial-gradient(60rem 30rem at 12% -8%, rgb(147 197 253 / 0.28), transparent 70%);
+  --canvas-glow-2: radial-gradient(50rem 28rem at 100% 0%, rgb(199 210 254 / 0.32), transparent 70%);
+  --canvas-glow-3: radial-gradient(40rem 30rem at 60% 110%, rgb(227 236 252 / 0.7), transparent 70%);
+
+  /* Shell geometry */
+  --sidebar-w: 248px;
+  --sidebar-w-collapsed: 68px;
+  --sidebar-current: var(--sidebar-w);
+  --header-h: 60px;
+  --sidebar-bg: rgb(255 255 255 / 0.72);
+  --hover: #f1f5fb;
+
+  /* shadcn tokens */
+  --background: #ffffff;
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--crm-primary);
+  --primary-foreground: #ffffff;
+  --primary-hover: color-mix(in srgb, var(--crm-primary) 82%, var(--crm-depth));
+  --primary-press: var(--crm-depth);
+  --secondary: var(--crm-surface);
+  --secondary-foreground: var(--crm-depth);
+  --muted: #f1f5f9;
+  --muted-foreground: var(--ink-muted);
+  --accent: var(--crm-surface);
+  --accent-foreground: var(--crm-depth);
+  --destructive: var(--error);
+  --border: var(--border-color);
+  --input: #dbe2ec;
+  --ring: var(--crm-action);
+  --radius: 0.625rem;
+
+  /* Charts — CRM blues first, semantic after */
+  --chart-1: var(--crm-primary);
+  --chart-2: var(--crm-action);
+  --chart-3: var(--crm-soft);
+  --chart-4: var(--crm-depth);
+  --chart-5: #0ea5e9;
+  --chart-6: var(--success);
+  --chart-7: var(--warning);
+  --chart-grid: #e6eaf0;
+  --chart-axis: var(--n-muted);
+}
+
+/* EVOQ universal dark mode (pre-existing in the app; preserved) */
+.dark {
+  --title: #ffffff;
+  --ink: #fafafa;
+  --ink-body: #d4d4d8;
+  --ink-muted: #a1a1aa;
+  --ink-faint: #71717a;
+  --border-color: #27272a;
+  --border-soft: #1c1c1f;
+  --card-shadow: 0 1px 2px rgb(0 0 0 / 0.5);
+  --pop-shadow: 0 12px 40px rgb(0 0 0 / 0.6);
+
+  --canvas-base: linear-gradient(180deg, #050608 0%, #07080c 100%);
+  --canvas-glow-1: radial-gradient(60rem 30rem at 12% -8%, rgb(29 78 216 / 0.16), transparent 70%);
+  --canvas-glow-2: radial-gradient(50rem 28rem at 100% 0%, rgb(12 36 114 / 0.22), transparent 70%);
+  --canvas-glow-3: none;
+
+  --sidebar-bg: rgb(10 10 10 / 0.85);
+  --hover: #18181b;
+
+  --success-fg: #34d399;
+  --success-bg: rgb(16 185 129 / 0.14);
+  --warning-fg: #fbbf24;
+  --warning-bg: rgb(245 158 11 / 0.14);
+  --error-fg: #f87171;
+  --error-bg: rgb(239 68 68 / 0.14);
+  --neutral-fg: #a1a1aa;
+  --neutral-bg: rgb(161 161 170 / 0.14);
+  --info-fg: var(--crm-hover);
+  --info-bg: rgb(59 130 246 / 0.14);
+
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #0f0f10;
+  --card-foreground: #fafafa;
+  --popover: #111113;
+  --popover-foreground: #fafafa;
+  --primary: var(--crm-action);
+  --primary-hover: var(--crm-primary);
+  --primary-press: var(--crm-depth);
+  --secondary: rgb(59 130 246 / 0.14);
+  --secondary-foreground: var(--crm-hover);
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #18181b;
+  --accent-foreground: #fafafa;
+  --border: var(--border-color);
+  --input: #27272a;
+  --ring: var(--crm-hover);
+  --chart-grid: #27272a;
+  --chart-axis: #a1a1aa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), "Inter Fallback", system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+
+  --color-crm-depth: var(--crm-depth);
+  --color-crm-primary: var(--crm-primary);
+  --color-crm-action: var(--crm-action);
+  --color-crm-hover: var(--crm-hover);
+  --color-crm-soft: var(--crm-soft);
+  --color-crm-tint: var(--crm-tint);
+  --color-crm-surface: var(--crm-surface);
+  --color-surface-subtle: var(--n-bg);
+  --color-sidebar: var(--sidebar-bg);
+  --color-hover: var(--hover);
+
+  --color-success: var(--success);
+  --color-success-fg: var(--success-fg);
+  --color-success-bg: var(--success-bg);
+  --color-warning: var(--warning);
+  --color-warning-fg: var(--warning-fg);
+  --color-warning-bg: var(--warning-bg);
+  --color-error: var(--error);
+  --color-error-fg: var(--error-fg);
+  --color-error-bg: var(--error-bg);
+  --color-neutral: var(--neutral);
+  --color-neutral-fg: var(--neutral-fg);
+  --color-neutral-bg: var(--neutral-bg);
+  --color-info-fg: var(--info-fg);
+  --color-info-bg: var(--info-bg);
+
+  --color-heading: var(--title);
+  --color-ink: var(--ink);
+  --color-ink-body: var(--ink-body);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--border-color);
+  --color-line-soft: var(--border-soft);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-press: var(--primary-press);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.2);
+  --radius-2xl: calc(var(--radius) * 1.6);
+
+  /* Type scale (pre-existing CRM scale, tightened): page 20, section 16,
+     card 14/600, body 14, label 13, caption 12, micro 11, KPI 26. */
+  --text-micro: 11px;
+  --text-micro--line-height: 14px;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-label: 13px;
+  --text-label--line-height: 18px;
+  --text-body: 14px;
+  --text-body--line-height: 20px;
+  --text-card-title: 14px;
+  --text-card-title--line-height: 20px;
+  --text-card-title--font-weight: 600;
+  --text-section: 16px;
+  --text-section--line-height: 24px;
+  --text-section--font-weight: 600;
+  --text-page-title: 20px;
+  --text-page-title--line-height: 28px;
+  --text-page-title--font-weight: 700;
+  --text-kpi: 26px;
+  --text-kpi--line-height: 32px;
+  --text-kpi--font-weight: 700;
+
+  --shadow-card: var(--card-shadow);
+  --shadow-pop: var(--pop-shadow);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    min-height: 100dvh;
+    background-color: var(--n-bg);
+    background-image: var(--canvas-glow-1), var(--canvas-glow-2), var(--canvas-glow-3), var(--canvas-base);
+    background-attachment: fixed;
+    color: var(--ink-body);
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .dark body {
+    background-color: #000;
+  }
+  ::selection {
+    background: var(--crm-tint);
+    color: var(--crm-depth);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  [data-slot]:focus-visible {
+    outline: none;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .dark .scrollbar-thin {
+    scrollbar-color: #3f3f46 transparent;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Content column offset by the fixed header and the desktop sidebar. */
+[data-sidebar="collapsed"] {
+  --sidebar-current: var(--sidebar-w-collapsed);
+}
+.app-content {
+  padding-top: var(--header-h);
+}
+@media (min-width: 1024px) {
+  .app-content {
+    margin-left: var(--sidebar-current);
+    transition: margin-left 160ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body { background: #fff; }
+  [data-print="hide"] { display: none !important; }
+  .app-content { margin: 0 !important; padding: 0 !important; }
+}

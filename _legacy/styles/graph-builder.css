@@ -1,0 +1,173 @@
+/* xyflow/reactflow Theme Overrides */
+
+/* Light Theme */
+.light-theme .react-flow__node {
+  background: white;
+  border: 1.5px solid #e3ecfc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.light-theme .react-flow__node.selected {
+  box-shadow: 0 0 0 2px #1d4ed8;
+}
+
+.light-theme .react-flow__node-module {
+  background: white;
+  border: 1.5px solid #e3ecfc;
+}
+
+.light-theme .react-flow__edge {
+  stroke: #1d4ed8;
+  stroke-width: 2px;
+}
+
+.light-theme .react-flow__edge.selected {
+  stroke: #2563eb;
+  stroke-width: 2.5px;
+}
+
+.light-theme .react-flow__handle {
+  background: #1d4ed8;
+  border: 2px solid white;
+  width: 8px;
+  height: 8px;
+}
+
+.light-theme .react-flow__handle.connectingFrom {
+  background: #2563eb;
+}
+
+.light-theme .react-flow__background {
+  background-color: #eff6ff;
+}
+
+.light-theme .react-flow__background circle {
+  fill: #e3ecfc;
+}
+
+.light-theme .react-flow__minimap {
+  background-color: white;
+  border: 1px solid #e3ecfc;
+}
+
+.light-theme .react-flow__controls {
+  background: white;
+  border: 1px solid #e3ecfc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.light-theme .react-flow__controls button {
+  border-bottom: 1px solid #e3ecfc;
+  color: #64748b;
+  background: white;
+}
+
+.light-theme .react-flow__controls button:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.light-theme .react-flow__controls button:last-child {
+  border-bottom: none;
+}
+
+/* Dark Theme */
+.dark-theme .react-flow__node {
+  background: #1c1c1e;
+  border: 1.5px solid #27272a;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .react-flow__node.selected {
+  box-shadow: 0 0 0 2px #93c5fd;
+}
+
+.dark-theme .react-flow__node-module {
+  background: #1c1c1e;
+  border: 1.5px solid #27272a;
+}
+
+.dark-theme .react-flow__edge {
+  stroke: #1d4ed8;
+  stroke-width: 2px;
+}
+
+.dark-theme .react-flow__edge.selected {
+  stroke: #60a5fa;
+  stroke-width: 2.5px;
+}
+
+.dark-theme .react-flow__handle {
+  background: #1d4ed8;
+  border: 2px solid #1c1c1e;
+  width: 8px;
+  height: 8px;
+}
+
+.dark-theme .react-flow__handle.connectingFrom {
+  background: #60a5fa;
+}
+
+.dark-theme .react-flow__background {
+  background-color: #000000;
+}
+
+.dark-theme .react-flow__background circle {
+  fill: #27272a;
+}
+
+.dark-theme .react-flow__minimap {
+  background-color: #111113;
+  border: 1px solid #27272a;
+}
+
+.dark-theme .react-flow__controls {
+  background: #1c1c1e;
+  border: 1px solid #27272a;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.dark-theme .react-flow__controls button {
+  border-bottom: 1px solid #27272a;
+  color: #9ca3af;
+  background: #1c1c1e;
+}
+
+.dark-theme .react-flow__controls button:hover {
+  background: #27272a;
+  color: #93c5fd;
+}
+
+.dark-theme .react-flow__controls button:last-child {
+  border-bottom: none;
+}
+
+/* Shared Styles */
+.react-flow__node,
+.react-flow__handle {
+  font-family: inherit;
+}
+
+.react-flow__connection {
+  stroke: #1d4ed8;
+  stroke-width: 2px;
+}
+
+.react-flow__connection.connecting {
+  stroke-dasharray: 5, 5;
+}
+
+.react-flow__pane {
+  cursor: grab;
+}
+
+.react-flow__pane.dragging {
+  cursor: grabbing;
+}
+
+/* Remove default xyflow styles we don't need */
+.react-flow__attribution {
+  display: none;
+}

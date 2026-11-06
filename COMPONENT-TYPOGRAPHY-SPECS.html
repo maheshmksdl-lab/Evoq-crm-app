@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Typography Specifications | Complete UI Element Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #0C2472;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(29, 78, 216, 0.08);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1D4ED8 0%, #0C2472 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #1D4ED8;
+            border-bottom: 3px solid #E3ECFC;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 20px 0;
+            color: #0C2472;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: #0C2472;
+        }
+
+        .component-spec {
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .spec-header {
+            border-bottom: 2px solid #E3ECFC;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .spec-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0C2472;
+            margin-bottom: 8px;
+        }
+
+        .spec-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .spec-item {
+            background: #F8FAFC;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #1D4ED8;
+        }
+
+        .spec-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #1D4ED8;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .spec-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0C2472;
+            font-family: 'Monaco', monospace;
+        }
+
+        .visual-demo {
+            background: linear-gradient(135deg, #EFF6FF 0%, #f9fbff 100%);
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .demo-title {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #1D4ED8;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .code-block {
+            background: #0A0A0A;
+            color: #D4D4D8;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th {
+            background: #EFF6FF;
+            color: #0C2472;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #E3ECFC;
+            font-size: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #E3ECFC;
+            font-size: 13px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .section-note {
+            background: #E3ECFC;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 13px;
+            color: #0C2472;
+        }
+
+        .section-note.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+            color: #92400E;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 20px;
+        }
+
+        .nav-visual {
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .topbar {
+            background: #E3ECFC;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #E3ECFC;
+        }
+
+        .topbar-logo {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0C2472;
+        }
+
+        .topbar-nav {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .topbar-item {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0C2472;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        .topbar-item.active {
+            background: white;
+            border-radius: 4px;
+            color: #1D4ED8;
+        }
+
+        .sidebar {
+            background: #E3ECFC;
+            width: 240px;
+            padding: 20px 0;
+            min-height: 300px;
+            border-right: 1px solid #E3ECFC;
+        }
+
+        .sidebar-item {
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0C2472;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-item.active {
+            background: white;
+            border-left: 3px solid #1D4ED8;
+            color: #1D4ED8;
+            padding-left: 13px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(29, 78, 216, 0.04);
+        }
+
+        .sidebar-submenu {
+            padding-left: 32px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #334155;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        .breadcrumb-demo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #94A3B8;
+            margin: 15px 0;
+        }
+
+        .breadcrumb-item {
+            color: #0C2472;
+        }
+
+        .breadcrumb-separator {
+            color: #E3ECFC;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 13px;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .spec-card {
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .spec-card h4 {
+            margin-top: 0;
+            font-size: 14px;
+        }
+
+        .dark-demo {
+            background: #0A0A0A;
+            border: 1px solid #27272A;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .dark-demo .topbar {
+            background: #18181B;
+            border-bottom-color: #27272A;
+        }
+
+        .dark-demo .topbar-logo {
+            color: #D4D4D8;
+        }
+
+        .dark-demo .topbar-item {
+            color: #D4D4D8;
+        }
+
+        .dark-demo .topbar-item.active {
+            background: #27272A;
+            color: #60A5FA;
+        }
+
+        .dark-demo .sidebar {
+            background: #111113;
+            border-right-color: #27272A;
+        }
+
+        .dark-demo .sidebar-item {
+            color: #D4D4D8;
+        }
+
+        .dark-demo .sidebar-item.active {
+            background: #18181B;
+            border-left-color: #60A5FA;
+            color: #60A5FA;
+        }
+
+        footer {
+            background: #F8FAFC;
+            padding: 30px 40px;
+            text-align: center;
+            color: #94A3B8;
+            border-top: 1px solid #E3ECFC;
+        }
+
+        .download-btn {
+            background: #1D4ED8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background: #0C2472;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        code {
+            background: #EFF6FF;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            color: #0C2472;
+        }
+
+        .spec-badge {
+            display: inline-block;
+            background: #93C5FD;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Component Typography Specifications</h1>
+            <p>Exact Font Sizes, Weights & Spacing for Every UI Element</p>
+            <p class="subtitle">Navigation, Sidebars, Cards, Tables, Forms, Modals, and All Components</p>
+        </header>
+
+        <div class="content">
+
+            <!-- SECTION 1: NAVIGATION BAR (TOP BAR) -->
+            <section>
+                <h2>🧭 1. Navigation Bar (Top Bar)</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    The top navigation bar typically contains the logo, main navigation links, search, and user menu.
+                </p>
+
+                <h3>Topbar Container Specifications</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Topbar / Header Container</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Height</div>
+                            <div class="spec-value">60px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">#E3ECFC</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding</div>
+                            <div class="spec-value">12px 16px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Gap Between Items</div>
+                            <div class="spec-value">20px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Logo/Branding Text</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">App Logo & Name</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">700 (Bold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#0C2472</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Line Height</div>
+                            <div class="spec-value">1.4</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Example</div>
+                        <div style="font-size: 14px; font-weight: 700; color: #0C2472;">📊 EVOA CRM</div>
+                    </div>
+                </div>
+
+                <h3>Navigation Menu Items</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Nav Menu Item (Default)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#0C2472</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding</div>
+                            <div class="spec-value">6px 12px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Line Height</div>
+                            <div class="spec-value">1.4</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Inactive Nav Items (Light Mode)</div>
+                        <div style="display: flex; gap: 15px;">
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; padding: 6px 12px;">Dashboard</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; padding: 6px 12px;">Leads</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; padding: 6px 12px;">Deals</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Nav Menu Item (Active/Hover)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color (Active)</div>
+                            <div class="spec-value">#1D4ED8</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">white</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Border Radius</div>
+                            <div class="spec-value">4px</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Active Nav Item</div>
+                        <div style="display: flex; gap: 15px;">
+                            <div style="font-size: 14px; font-weight: 600; color: #1D4ED8; background: white; padding: 6px 12px; border-radius: 4px;">Leads</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; padding: 6px 12px;">Deals</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Topbar — Visual Example</h3>
+                <div class="nav-visual">
+                    <div class="topbar">
+                        <div class="topbar-logo">📊 EVOA CRM</div>
+                        <div class="topbar-nav">
+                            <div class="topbar-item active">Dashboard</div>
+                            <div class="topbar-item">Leads</div>
+                            <div class="topbar-item">Deals</div>
+                            <div class="topbar-item">Contacts</div>
+                        </div>
+                        <div style="margin-left: auto;">
+                            <span style="font-size: 14px; font-weight: 600; color: #0C2472;">👤 User</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Topbar — Dark Mode</h3>
+                <div class="dark-demo">
+                    <div class="topbar">
+                        <div class="topbar-logo">📊 EVOA CRM</div>
+                        <div class="topbar-nav">
+                            <div class="topbar-item active">Dashboard</div>
+                            <div class="topbar-item">Leads</div>
+                            <div class="topbar-item">Deals</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>🎯 Topbar Typography Rules:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>All items: 14px, 600 weight</strong> — ensures visual consistency across nav</li>
+                        <li><strong>Active state:</strong> Change text color to #1D4ED8, background to white</li>
+                        <li><strong>Hover state:</strong> Background changes to #E3ECFC (lighter tint), no color change</li>
+                        <li><strong>Dark mode:</strong> Background #18181B, text #D4D4D8, active text #60A5FA</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SIDEBAR NAVIGATION -->
+            <section>
+                <h2>📋 2. Sidebar Navigation</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Left sidebar with main navigation items, typically 240px wide.
+                </p>
+
+                <h3>Sidebar Container</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Sidebar Container</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Width</div>
+                            <div class="spec-value">240px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">#E3ECFC</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding</div>
+                            <div class="spec-value">20px 0</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Border Right</div>
+                            <div class="spec-value">1px #E3ECFC</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Sidebar Menu Items</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Sidebar Item (Default/Inactive)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#0C2472</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding</div>
+                            <div class="spec-value">12px 16px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Height</div>
+                            <div class="spec-value">44px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Sidebar Item (Active)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#1D4ED8</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">white</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Border Left</div>
+                            <div class="spec-value">3px #1D4ED8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Sidebar Submenu Items</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Submenu Item (Nested)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">13px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">500 (Medium)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#334155</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding Left</div>
+                            <div class="spec-value">32px</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Sidebar Badge/Counter</h3>
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Sidebar Item Count Badge</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">10px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">700 (Bold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">white</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">#1D4ED8</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Sidebar with Count Badge</div>
+                        <div style="display: flex; align-items: center; gap: 10px; padding: 8px; margin-bottom: 8px;">
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">📧 Tasks</div>
+                            <div style="margin-left: auto; font-size: 10px; font-weight: 700; background: #1D4ED8; color: white; padding: 2px 6px; border-radius: 3px;">7</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Sidebar — Visual Example</h3>
+                <div class="nav-visual">
+                    <div style="display: flex;">
+                        <div class="sidebar">
+                            <div class="sidebar-item active">
+                                <span>📊 Dashboard</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <span>👥 Leads</span>
+                                <span style="margin-left: auto; font-size: 10px; font-weight: 700; background: #1D4ED8; color: white; padding: 2px 6px; border-radius: 3px;">14</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <span>💼 Deals</span>
+                            </div>
+                            <div class="sidebar-item">
+                                <span>📋 Contacts</span>
+                            </div>
+                            <div class="sidebar-submenu">Customers</div>
+                            <div class="sidebar-submenu">Suppliers</div>
+                            <div class="sidebar-item">
+                                <span>🏢 Accounts</span>
+                            </div>
+                        </div>
+                        <div style="flex: 1; padding: 20px; background: white;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: BREADCRUMBS -->
+            <section>
+                <h2>🔗 3. Breadcrumb Navigation</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Shows the current page location within the navigation hierarchy.
+                </p>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Breadcrumb Item</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">12px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">500 (Medium)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#94A3B8</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Line Height</div>
+                            <div class="spec-value">1.5</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Breadcrumb Example</div>
+                        <div class="breadcrumb-demo">
+                            <span class="breadcrumb-item">CRM</span>
+                            <span class="breadcrumb-separator">/</span>
+                            <span class="breadcrumb-item">Leads</span>
+                            <span class="breadcrumb-separator">/</span>
+                            <span style="color: #1D4ED8; font-weight: 600;">John Smith</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: PAGE HEADERS & TITLES -->
+            <section>
+                <h2>🎭 4. Page Headers & Titles</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Different header types used across listing pages, detail pages, and modals.
+                </p>
+
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h4>Page Title (h1)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>20px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>800</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>Record name (Lead detail, Contact detail)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>List Page Header (h2)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>18px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>"Leads" / "Contacts" at top of list page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Modal Title (h3)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>18px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>"Create Lead" / "Edit Contact" in dialogs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Card Title (h4)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>16px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>Card headings, KPI titles</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Section Header (Eyebrow)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Case</strong></td>
+                                    <td><code>UPPERCASE</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>PERSONAL INFO, RELATED DEALS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Subtitle / Helper Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>500</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#94A3B8</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Usage</strong></td>
+                                    <td>Record ID under title, descriptions</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: TABLE & LIST ITEMS -->
+            <section>
+                <h2>📊 5. Tables & List Items</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Typography for table cells, headers, and list row content.
+                </p>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Table Header Cell</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">11.5px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Case</div>
+                            <div class="spec-value">UPPERCASE</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#0C2472</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Letter Spacing</div>
+                            <div class="spec-value">0.05em</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Background</div>
+                            <div class="spec-value">#EFF6FF</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Table Header Example</div>
+                        <table style="width: 100%; margin: 0;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 12px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">NAME</th>
+                                    <th style="padding: 12px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">EMAIL</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">Table Body Cell</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">14px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">600 (Semibold)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#0C2472</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Padding</div>
+                            <div class="spec-value">12px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Height</div>
+                            <div class="spec-value">44px minimum</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">Table Row Example</div>
+                        <table style="width: 100%; margin: 0; border-collapse: collapse;">
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #E3ECFC;">
+                                    <td style="padding: 12px; font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</td>
+                                    <td style="padding: 12px; font-size: 14px; font-weight: 600; color: #0C2472;">john@example.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="component-spec">
+                    <div class="spec-header">
+                        <div class="spec-title">List Item (Secondary Text)</div>
+                    </div>
+                    <div class="spec-details">
+                        <div class="spec-item">
+                            <div class="spec-label">Font Size</div>
+                            <div class="spec-value">12px</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Font Weight</div>
+                            <div class="spec-value">500 (Medium)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Color</div>
+                            <div class="spec-value">#94A3B8</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Usage</div>
+                            <div class="spec-value">Email, company, secondary info</div>
+                        </div>
+                    </div>
+
+                    <div class="visual-demo">
+                        <div class="demo-title">List Item with Secondary Text</div>
+                        <div style="padding: 12px; background: #f9fbff; border-radius: 6px;">
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; margin-bottom: 4px;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">john@example.com · Active Lead</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: FORM ELEMENTS -->
+            <section>
+                <h2>🔤 6. Form Elements</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Typography for form labels, inputs, help text, and validation messages.
+                </p>
+
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h4>Form Label</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>11.5px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Case</strong></td>
+                                    <td><code>UPPERCASE</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spacing</strong></td>
+                                    <td><code>0.05em</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin Bottom</strong></td>
+                                    <td><code>6px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Input Placeholder Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>400</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#94A3B8</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Opacity</strong></td>
+                                    <td><code>1 (full opacity)</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Input Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>400</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Line Height</strong></td>
+                                    <td><code>1.5</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Helper Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>500</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#94A3B8</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin Top</strong></td>
+                                    <td><code>6px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Error Message</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td><code>500</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#EF4444 (red)</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin Top</strong></td>
+                                    <td><code>6px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Required Indicator (*)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>16px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#EF4444</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Position</strong></td>
+                                    <td>After label text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: BADGES & STATUS -->
+            <section>
+                <h2>🏷️ 7. Badges, Tags & Status Indicators</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Typography for status badges, tags, and small indicators.
+                </p>
+
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h4>Status Badge (Large)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>11.5px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>6px 12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Border Radius</strong></td>
+                                    <td><code>6px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Count Badge (Small)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>10px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>2px 6px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Border Radius</strong></td>
+                                    <td><code>3px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Tag / Pill</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>500</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>6px 12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Border Radius</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="visual-demo">
+                    <div class="demo-title">Badge Examples</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <div style="font-size: 11.5px; font-weight: 600; background: #D1FAE5; color: #065F46; padding: 6px 12px; border-radius: 6px;">Active</div>
+                        <div style="font-size: 11.5px; font-weight: 600; background: #FEF3C7; color: #92400E; padding: 6px 12px; border-radius: 6px;">Pending</div>
+                        <div style="font-size: 11.5px; font-weight: 600; background: #FEE2E2; color: #991B1B; padding: 6px 12px; border-radius: 6px;">Inactive</div>
+                        <div style="font-size: 10px; font-weight: 700; background: #1D4ED8; color: white; padding: 2px 6px; border-radius: 3px;">14</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 8: BUTTONS & CONTROLS -->
+            <section>
+                <h2>🔘 8. Buttons & Controls</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Typography for all button types, links, and interactive controls.
+                </p>
+
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h4>Primary Button</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>white</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>10px 20px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Line Height</strong></td>
+                                    <td><code>1.4</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Secondary Button</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#1D4ED8</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>10px 20px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Text Link</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#1D4ED8</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Decoration</strong></td>
+                                    <td>None (hover: underline)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Icon Button Label</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>12px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin Top</strong></td>
+                                    <td><code>6px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Disabled Button Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#94A3B8</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Dropdown/Select Label</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>400</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 9: DIALOG & MODALS -->
+            <section>
+                <h2>🪟 9. Modals & Dialogs</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Typography for modal titles, content, and action buttons.
+                </p>
+
+                <div class="visual-demo">
+                    <div class="demo-title">Modal Component Hierarchy</div>
+                    <div style="border: 1px solid #E3ECFC; border-radius: 8px; overflow: hidden;">
+                        <div style="background: white; padding: 20px; border-bottom: 1px solid #E3ECFC;">
+                            <div style="font-size: 18px; font-weight: 700; color: #0C2472;">Create Lead</div>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="margin-bottom: 16px;">
+                                <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">Full Name <span style="color: #EF4444;">*</span></div>
+                                <input type="text" placeholder="Enter full name" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">Email *</div>
+                                <input type="email" placeholder="Enter email" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                                <div style="font-size: 12px; font-weight: 500; color: #94A3B8; margin-top: 6px;">Example: john@example.com</div>
+                            </div>
+                        </div>
+                        <div style="background: #F8FAFC; padding: 16px; display: flex; gap: 12px; justify-content: flex-end; border-top: 1px solid #E3ECFC;">
+                            <button style="background: white; color: #0C2472; border: 1px solid #E3ECFC; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Cancel</button>
+                            <button style="background: #1D4ED8; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Create Lead</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h4>Modal Title (h3)</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>18px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>700</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#0C2472</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>20px</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Modal Body Text</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>400</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Color</strong></td>
+                                    <td><code>#334155</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Line Height</strong></td>
+                                    <td><code>1.6</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="spec-card">
+                        <h4>Modal Button</h4>
+                        <table style="margin: 0;">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Font Size</strong></td>
+                                    <td><code>14px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Font Weight</strong></td>
+                                    <td><code>600</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Padding</strong></td>
+                                    <td><code>10px 20px</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Margin</strong></td>
+                                    <td><code>16px (vertical gap)</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: COMPLETE COMPONENT REFERENCE -->
+            <section>
+                <h2>📋 10. Complete Component Typography Reference</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Quick reference table for all UI components and their exact typography specifications.
+                </p>
+
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Size</th>
+                                <th>Weight</th>
+                                <th>Color (Light)</th>
+                                <th>Color (Dark)</th>
+                                <th>Special Rules</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>App Logo</strong></td>
+                                <td>14px</td>
+                                <td>700</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Topbar Nav Item</strong></td>
+                                <td>14px</td>
+                                <td>600</td>
+                                <td>#0C2472 / #1D4ED8 (active)</td>
+                                <td>#D4D4D8 / #60A5FA (active)</td>
+                                <td>Active: bg-white (light) / #27272A (dark)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sidebar Item</strong></td>
+                                <td>14px</td>
+                                <td>600</td>
+                                <td>#0C2472 / #1D4ED8 (active)</td>
+                                <td>#D4D4D8 / #60A5FA (active)</td>
+                                <td>Active: border-left 3px #1D4ED8</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sidebar Submenu</strong></td>
+                                <td>13px</td>
+                                <td>500</td>
+                                <td>#334155</td>
+                                <td>#71717A</td>
+                                <td>Padding-left: 32px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Breadcrumb</strong></td>
+                                <td>12px</td>
+                                <td>500</td>
+                                <td>#94A3B8 / #0C2472 (current)</td>
+                                <td>#9CA3AF / #D4D4D8 (current)</td>
+                                <td>Separator: #E3ECFC</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Page Title (h1)</strong></td>
+                                <td>20px</td>
+                                <td>800</td>
+                                <td>#0C2472</td>
+                                <td>#F4F4F5</td>
+                                <td>Line-height: 1.2</td>
+                            </tr>
+                            <tr>
+                                <td><strong>List Header (h2)</strong></td>
+                                <td>18px</td>
+                                <td>700</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modal Title (h3)</strong></td>
+                                <td>18px</td>
+                                <td>700</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>Padding: 20px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Card Title (h4)</strong></td>
+                                <td>16px</td>
+                                <td>700</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section Header</strong></td>
+                                <td>12px</td>
+                                <td>700</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>UPPERCASE, letter-spacing: 0.05em</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Table Header</strong></td>
+                                <td>11.5px</td>
+                                <td>600</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>UPPERCASE, bg: #EFF6FF (light) / #111113 (dark)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Table Cell</strong></td>
+                                <td>14px</td>
+                                <td>600</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>Padding: 12px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Form Label</strong></td>
+                                <td>11.5px</td>
+                                <td>600</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>UPPERCASE, letter-spacing: 0.05em</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Input Text</strong></td>
+                                <td>14px</td>
+                                <td>400</td>
+                                <td>#0C2472</td>
+                                <td>#D4D4D8</td>
+                                <td>Line-height: 1.5</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Helper Text</strong></td>
+                                <td>12px</td>
+                                <td>500</td>
+                                <td>#94A3B8</td>
+                                <td>#9CA3AF</td>
+                                <td>Margin-top: 6px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Button</strong></td>
+                                <td>14px</td>
+                                <td>600</td>
+                                <td>white</td>
+                                <td>white</td>
+                                <td>Padding: 10px 20px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Secondary Button</strong></td>
+                                <td>14px</td>
+                                <td>600</td>
+                                <td>#1D4ED8</td>
+                                <td>#60A5FA</td>
+                                <td>Padding: 10px 20px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status Badge</strong></td>
+                                <td>11.5px</td>
+                                <td>600</td>
+                                <td>Varies by status</td>
+                                <td>Varies by status</td>
+                                <td>Padding: 6px 12px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Count Badge</strong></td>
+                                <td>10px</td>
+                                <td>700</td>
+                                <td>white</td>
+                                <td>white</td>
+                                <td>Padding: 2px 6px, bg: #1D4ED8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 13px;">
+                <strong>Component Typography Specifications</strong> — Exact font sizes and styling for every UI component<br>
+                <strong>Last Updated:</strong> 2026 | <strong>Compatible with:</strong> CRM Design System v1.0
+            </p>
+            <button class="download-btn" onclick="downloadHTML()">📥 Download Component Typography Guide</button>
+            <p style="margin-top: 15px; font-size: 11px; color: #9CA3AF;">
+                Use this as your definitive reference for all component typography. All values are exact and should not be adjusted by eye.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Component-Typography-Specs.html';
+            link.click();
+        }
+    </script>
+</body>
+</html>

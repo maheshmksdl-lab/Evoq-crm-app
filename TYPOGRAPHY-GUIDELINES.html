@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typography Guidelines | Complete Font System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #0C2472;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(29, 78, 216, 0.08);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1D4ED8 0%, #0C2472 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #1D4ED8;
+            border-bottom: 3px solid #E3ECFC;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 20px 0;
+            color: #0C2472;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: #0C2472;
+        }
+
+        .typography-demo {
+            background: #F8FAFC;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 4px solid #1D4ED8;
+        }
+
+        .demo-light { background: white; border-left-color: #1D4ED8; }
+        .demo-dark { background: #0A0A0A; border-left-color: #60A5FA; color: #D4D4D8; }
+
+        .sample-text {
+            margin: 15px 0;
+            padding: 12px;
+            background: white;
+            border-radius: 4px;
+            border-left: 3px solid #93C5FD;
+        }
+
+        .sample-text.dark {
+            background: #18181B;
+            border-left-color: #60A5FA;
+            color: #D4D4D8;
+        }
+
+        .tier-card {
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .tier-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #E3ECFC;
+            padding-bottom: 12px;
+        }
+
+        .tier-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0C2472;
+        }
+
+        .tier-specs {
+            font-size: 11px;
+            font-weight: 600;
+            color: #1D4ED8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tier-example {
+            margin: 15px 0;
+            padding: 12px;
+            background: #F8FAFC;
+            border-radius: 6px;
+            border-left: 2px solid #1D4ED8;
+        }
+
+        .tier-example-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #94A3B8;
+            margin-bottom: 8px;
+        }
+
+        .usage-list {
+            margin: 12px 0;
+            padding-left: 20px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .usage-list li {
+            margin: 6px 0;
+            color: #334155;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-card {
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            background: #F8FAFC;
+        }
+
+        .comparison-card.dark {
+            background: #0A0A0A;
+            border-color: #27272A;
+        }
+
+        .comparison-card h4 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        th {
+            background: #EFF6FF;
+            color: #0C2472;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #E3ECFC;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #E3ECFC;
+            font-size: 13px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        code {
+            background: #EFF6FF;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', monospace;
+            font-size: 11px;
+            color: #0C2472;
+        }
+
+        .code-block {
+            background: #0A0A0A;
+            color: #D4D4D8;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .section-note {
+            background: #E3ECFC;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #0C2472;
+        }
+
+        .section-note.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+            color: #92400E;
+        }
+
+        .section-note.success {
+            background: #D1FAE5;
+            border-left-color: #10B981;
+            color: #065F46;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 20px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .scale-example {
+            background: white;
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .scale-line {
+            display: flex;
+            align-items: baseline;
+            margin: 12px 0;
+            gap: 15px;
+        }
+
+        .scale-label {
+            min-width: 60px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #1D4ED8;
+            text-transform: uppercase;
+        }
+
+        .scale-size {
+            font-weight: 600;
+            color: #0C2472;
+        }
+
+        .context-example {
+            background: #F8FAFC;
+            border-left: 3px solid #1D4ED8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+
+        .context-title {
+            font-weight: 700;
+            color: #0C2472;
+            margin-bottom: 8px;
+        }
+
+        .context-code {
+            font-family: monospace;
+            font-size: 12px;
+            color: #334155;
+            background: white;
+            padding: 8px;
+            border-radius: 3px;
+        }
+
+        .hierarchy-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .hierarchy-level {
+            padding: 10px;
+            background: #F8FAFC;
+            border-radius: 4px;
+            border-left: 3px solid #1D4ED8;
+        }
+
+        footer {
+            background: #F8FAFC;
+            padding: 30px 40px;
+            text-align: center;
+            color: #94A3B8;
+            border-top: 1px solid #E3ECFC;
+        }
+
+        .download-btn {
+            background: #1D4ED8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background: #0C2472;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        .spec-badge {
+            display: inline-block;
+            background: #E3ECFC;
+            color: #0C2472;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Typography Guidelines</h1>
+            <p>Complete Font System with Detailed Usage Patterns</p>
+            <p class="subtitle">All font sizes, weights, and usage contexts for consistent visual hierarchy</p>
+        </header>
+
+        <div class="content">
+
+            <!-- SECTION 1: FONT STACK -->
+            <section>
+                <h2>🔤 1. Font Stack & System Fonts</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Uses system font stack for optimal performance, fast loading, and native appearance across all platforms.
+                </p>
+
+                <div class="code-block">
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                </div>
+
+                <h3>Font Stack Breakdown</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Font</th>
+                            <th>Platform</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>-apple-system</code></td>
+                            <td>macOS, iOS</td>
+                            <td>San Francisco — Apple's native system font</td>
+                        </tr>
+                        <tr>
+                            <td><code>BlinkMacSystemFont</code></td>
+                            <td>Safari (older Mac)</td>
+                            <td>Fallback for older Safari on macOS</td>
+                        </tr>
+                        <tr>
+                            <td><code>Segoe UI</code></td>
+                            <td>Windows</td>
+                            <td>Windows default system font</td>
+                        </tr>
+                        <tr>
+                            <td><code>Roboto</code></td>
+                            <td>Android</td>
+                            <td>Android native font</td>
+                        </tr>
+                        <tr>
+                            <td><code>Helvetica Neue</code></td>
+                            <td>Older systems</td>
+                            <td>Fallback for legacy devices</td>
+                        </tr>
+                        <tr>
+                            <td><code>Arial, sans-serif</code></td>
+                            <td>Universal</td>
+                            <td>Final fallback for any browser</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="section-note success">
+                    <strong>✅ Benefits:</strong> No font files to download (instant loading), native look on every platform, excellent readability, best performance
+                </div>
+            </section>
+
+            <!-- SECTION 2: TYPOGRAPHY TIERS -->
+            <section>
+                <h2>📊 2. Complete Typography Tiers</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Seven semantic tiers from 10px badges to 20px page titles. Each tier has a specific purpose and usage pattern.
+                </p>
+
+                <!-- TIER 1: TINY BADGE -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">🏷️ Tier 1: Tiny Badge / Count</span>
+                        <span class="tier-specs">10–11px · Bold (700)</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 10px or 11px;
+font-weight: 700;
+line-height: 1.2;
+letter-spacing: 0;
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Example:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Usage: Tab notification pill</div>
+                            <div style="font-size: 10px; font-weight: 700; color: #0C2472;">12 NEW</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Usage: Related list count badge</div>
+                            <div style="font-size: 11px; font-weight: 700; background: #E3ECFC; padding: 4px 8px; border-radius: 3px; display: inline-block; color: #0C2472;">4</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Usage: Notification count</div>
+                            <div style="font-size: 10px; font-weight: 700; color: #D4D4D8;">12 NEW</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Notification pill on tab bars</li>
+                            <li>✓ Small count badges in lists</li>
+                            <li>✓ Status indicators on avatars</li>
+                            <li>✓ Quick counters (e.g., "4 items")</li>
+                            <li>✗ Don't use for body text — too small for readability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 2: FIELD LABEL -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">🏷️ Tier 2: Field Label / Caption</span>
+                        <span class="tier-specs">11.5px · Semibold (600) · Uppercase</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 11.5px;
+font-weight: 600;
+line-height: 1.4;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Examples:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Form field label</div>
+                            <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472;">SALUTATION</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Section eyebrow header</div>
+                            <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 8px;">CONTACT INFORMATION</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">john@example.com</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Form field label in dark mode</div>
+                            <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8;">FIRST NAME</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Form input labels (above or inline)</li>
+                            <li>✓ Section eyebrow headings (PERSONAL INFO, TIMELINE)</li>
+                            <li>✓ Column headers in tables</li>
+                            <li>✓ Dialog/modal labels</li>
+                            <li>✗ Don't use for main headings — too small</li>
+                            <li>✗ Don't use for body text — uppercase breaks readability</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 3: METADATA -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">📋 Tier 3: Metadata / Timestamp</span>
+                        <span class="tier-specs">12px · Regular/Medium (500)</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 12px;
+font-weight: 500;
+line-height: 1.5;
+letter-spacing: 0;
+color: #94A3B8 (Tertiary text)
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Examples:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Timestamp in activity feed</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">Created: January 15, 2026 at 3:45 PM</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Record ID in breadcrumb</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">CRM-LEAD-00152</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Helper text under input</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">Example: john.smith@example.com</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Timestamp in dark mode</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #9CA3AF;">Modified: 2 days ago</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Activity timestamps (Created, Modified dates)</li>
+                            <li>✓ Record IDs and reference numbers</li>
+                            <li>✓ Helper text below form fields</li>
+                            <li>✓ Breadcrumb paths</li>
+                            <li>✓ Meta information (2 days ago, etc.)</li>
+                            <li>✓ Small descriptions and secondary info</li>
+                            <li>✗ Don't use for primary content — use Body/Value instead</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 4: SECTION HEADER -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">📌 Tier 4: Section Header</span>
+                        <span class="tier-specs">12px · Bold (700) · Uppercase</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 12px;
+font-weight: 700;
+line-height: 1.5;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #0C2472 (Primary text)
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Examples:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Section divider heading</div>
+                            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 12px;">PERSONAL INFORMATION</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">john@example.com</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Activity section heading</div>
+                            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472;">TIMELINE</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Related records section</div>
+                            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472;">RELATED DEALS</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Section header in dark mode</div>
+                            <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8;">ACCOUNT SETTINGS</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Section headings within a page (divides major sections)</li>
+                            <li>✓ Related records headers (RELATED DEALS, ASSOCIATED CONTACTS)</li>
+                            <li>✓ Activity timeline headers</li>
+                            <li>✓ Form section dividers</li>
+                            <li>✓ Table section breaks</li>
+                            <li>✗ Don't use for page title (use Page Hero instead)</li>
+                            <li>✗ Don't use for card titles (same size creates confusion)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 5: BODY/VALUE -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">📄 Tier 5: Body / Value Text</span>
+                        <span class="tier-specs">14px · Semibold (600)</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 14px;
+font-weight: 600;
+line-height: 1.6;
+letter-spacing: 0;
+color: #0C2472 (Primary text)
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Examples:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Field value in detail view</div>
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">NAME</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Email field value</div>
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">EMAIL</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; word-break: break-all;">john.smith@example.com</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Table row content</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">Jane Doe</div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Company name in related list</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">Acme Corporation</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Value text in dark mode</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #D4D4D8;">Active Lead</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Field values in detail/view modes</li>
+                            <li>✓ Data values in tables and lists</li>
+                            <li>✓ Card titles and main content</li>
+                            <li>✓ Related record names and companies</li>
+                            <li>✓ Form field input text (inside inputs)</li>
+                            <li>✓ Any primary content text</li>
+                            <li>✗ Don't use for headings or page titles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 6: BUTTONS & TABS -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">🔘 Tier 6: Buttons & Tabs</span>
+                        <span class="tier-specs">14px · Semibold (600)</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 14px;
+font-weight: 600;
+line-height: 1.4;
+letter-spacing: 0;
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Examples:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Primary button</div>
+                            <button style="background: #1D4ED8; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Create Lead</button>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Tab bar buttons</div>
+                            <div style="display: flex; gap: 10px; margin-top: 8px;">
+                                <button style="background: #1D4ED8; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 600;">Active</button>
+                                <button style="background: #f9fbff; color: #0C2472; border: 1px solid #E3ECFC; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Inactive</button>
+                            </div>
+                        </div>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Toolbar button (Filters, Sort, etc.)</div>
+                            <button style="background: #E3ECFC; color: #0C2472; border: 1px solid #E3ECFC; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Filters</button>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Examples:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Button in dark mode</div>
+                            <button style="background: #60A5FA; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Create Lead</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Primary action buttons (Create, Save, Submit)</li>
+                            <li>✓ Secondary action buttons (Cancel, Delete)</li>
+                            <li>✓ Tab labels in tab bars</li>
+                            <li>✓ Toolbar buttons (Filters, Columns, Sort, etc.)</li>
+                            <li>✓ Link-style buttons in content</li>
+                            <li>✗ Don't use for navigation (use nav-specific styling)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TIER 7: PAGE HERO -->
+                <div class="tier-card">
+                    <div class="tier-header">
+                        <span class="tier-name">🏆 Tier 7: Page Hero / Title</span>
+                        <span class="tier-specs">20px · Extrabold (800)</span>
+                    </div>
+
+                    <div style="margin: 15px 0;">
+                        <strong style="color: #0C2472;">CSS Specifications:</strong>
+                        <div class="code-block" style="margin: 10px 0; font-size: 11px;">
+font-size: 20px;
+font-weight: 800;
+line-height: 1.2;
+letter-spacing: -0.5px;
+color: #0C2472 (Primary text) or #F4F4F5 (dark mode)
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472;">Light Mode Example:</strong>
+                        <div class="tier-example">
+                            <div class="tier-example-title">Page title — Lead detail view</div>
+                            <div style="font-size: 20px; font-weight: 800; color: #0C2472;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8; margin-top: 6px;">CRM-LEAD-00152 · Active</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 15px;">
+                        <strong style="color: #0C2472;">Dark Mode Example:</strong>
+                        <div class="tier-example" style="background: #18181B; border-left-color: #60A5FA; color: #D4D4D8;">
+                            <div class="tier-example-title" style="color: #D4D4D8;">Page title in dark mode</div>
+                            <div style="font-size: 20px; font-weight: 800; color: #F4F4F5;">Jane Doe</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-top: 6px;">CRM-CONTACT-00248</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <strong style="color: #0C2472; display: block; margin-top: 15px;">When to Use:</strong>
+                        <ul class="usage-list">
+                            <li>✓ Record name/title (h1 element) — Leads, Contacts, Deals</li>
+                            <li>✓ Page heading at the top of detail views</li>
+                            <li>✓ Dialog/modal main title</li>
+                            <li>✗ Don't use for section headings (use Section Header instead)</li>
+                            <li>✗ Don't use multiple h1s on same page</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: LINE HEIGHT & SPACING -->
+            <section>
+                <h2>📏 3. Line Height & Spacing Rules</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Line height (leading) affects readability and visual rhythm. Different text sizes have different optimal line heights.
+                </p>
+
+                <h3>Line Height by Tier</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Font Size</th>
+                            <th>Line Height</th>
+                            <th>Ratio</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tiny Badge</strong></td>
+                            <td>10–11px</td>
+                            <td>1.2</td>
+                            <td>12–13px</td>
+                            <td>Tight for compact display</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Field Label</strong></td>
+                            <td>11.5px</td>
+                            <td>1.4</td>
+                            <td>16px</td>
+                            <td>Slightly loose for clickability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metadata</strong></td>
+                            <td>12px</td>
+                            <td>1.5</td>
+                            <td>18px</td>
+                            <td>Comfortable for secondary text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Section Header</strong></td>
+                            <td>12px</td>
+                            <td>1.5</td>
+                            <td>18px</td>
+                            <td>Same as Metadata</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body / Value</strong></td>
+                            <td>14px</td>
+                            <td>1.6</td>
+                            <td>22px</td>
+                            <td>Comfortable for reading</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buttons & Tabs</strong></td>
+                            <td>14px</td>
+                            <td>1.4</td>
+                            <td>19px</td>
+                            <td>Compact for button consistency</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Page Hero</strong></td>
+                            <td>20px</td>
+                            <td>1.2</td>
+                            <td>24px</td>
+                            <td>Tight for prominent display</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Letter Spacing (Tracking)</h3>
+                <div class="scale-example">
+                    <div class="scale-line">
+                        <span class="scale-label">Normal</span>
+                        <span class="scale-size">0em (default)</span>
+                        <div style="font-size: 13px; color: #94A3B8; margin-left: 20px;">Body text, values, headings</div>
+                    </div>
+                    <div class="scale-line">
+                        <span class="scale-label">Wide</span>
+                        <span class="scale-size">0.05em</span>
+                        <div style="font-size: 13px; color: #94A3B8; margin-left: 20px;">UPPERCASE labels and section headers</div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>💡 Why 0.05em for uppercase?</strong> Uppercase letters are dense and harder to read. Extra letter spacing improves legibility and creates visual separation. Always add letter-spacing to uppercase text.
+                </div>
+            </section>
+
+            <!-- SECTION 4: TYPOGRAPHY IN CONTEXT -->
+            <section>
+                <h2>🎯 4. Real-World Page Examples</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    How typography tiers work together in actual page layouts.
+                </p>
+
+                <h3>Lead Detail Page — Complete Hierarchy</h3>
+                <div class="typography-demo demo-light">
+                    <div style="margin-bottom: 30px;">
+                        <div style="font-size: 20px; font-weight: 800; color: #0C2472; line-height: 1.2;">John Smith</div>
+                        <div style="font-size: 12px; font-weight: 500; color: #94A3B8; margin-top: 4px;">CRM-LEAD-00152 · Active</div>
+                    </div>
+
+                    <div style="border-top: 1px solid #E3ECFC; padding-top: 20px; margin-bottom: 20px;">
+                        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 16px;">PERSONAL INFORMATION</div>
+
+                        <div style="display: grid; gap: 16px;">
+                            <div>
+                                <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">SALUTATION</div>
+                                <div style="font-size: 14px; font-weight: 600; color: #0C2472;">Mr.</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">EMAIL</div>
+                                <div style="font-size: 14px; font-weight: 600; color: #0C2472;">john.smith@example.com</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">CREATED</div>
+                                <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">January 15, 2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid #E3ECFC; padding-top: 20px;">
+                        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 16px;">RELATED DEALS</div>
+                        <div style="display: flex; gap: 8px; align-items: center; padding: 12px; background: #f9fbff; border-radius: 6px;">
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">Enterprise SaaS Implementation</div>
+                            <div style="margin-left: auto; font-size: 10px; font-weight: 700; background: #E3ECFC; color: #0C2472; padding: 4px 8px; border-radius: 3px;">$250,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>List View Page — Column Headers & Data</h3>
+                <div class="typography-demo demo-light" style="padding: 0;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid #E3ECFC;">
+                                <th style="padding: 15px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">NAME</th>
+                                <th style="padding: 15px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">EMAIL</th>
+                                <th style="padding: 15px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">CREATED</th>
+                                <th style="padding: 15px; text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; background: #EFF6FF;">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #E3ECFC;">
+                                <td style="padding: 15px; font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</td>
+                                <td style="padding: 15px; font-size: 14px; font-weight: 600; color: #0C2472;">john@example.com</td>
+                                <td style="padding: 15px; font-size: 12px; font-weight: 500; color: #94A3B8;">Jan 15, 2026</td>
+                                <td style="padding: 15px; font-size: 10px; font-weight: 700; background: #D1FAE5; color: #065F46; padding: 4px 8px; border-radius: 3px; display: inline-block;">ACTIVE</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #E3ECFC; background: rgba(29, 78, 216, 0.04);">
+                                <td style="padding: 15px; font-size: 14px; font-weight: 600; color: #0C2472;">Jane Doe</td>
+                                <td style="padding: 15px; font-size: 14px; font-weight: 600; color: #0C2472;">jane@example.com</td>
+                                <td style="padding: 15px; font-size: 12px; font-weight: 500; color: #94A3B8;">Jan 10, 2026</td>
+                                <td style="padding: 15px; font-size: 10px; font-weight: 700; background: #FEF3C7; color: #92400E; padding: 4px 8px; border-radius: 3px; display: inline-block;">PENDING</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Modal Dialog — Complete Typography Hierarchy</h3>
+                <div class="typography-demo demo-light" style="max-width: 500px;">
+                    <div style="border-bottom: 1px solid #E3ECFC; padding-bottom: 16px; margin-bottom: 20px;">
+                        <div style="font-size: 18px; font-weight: 700; color: #0C2472;">Create Lead</div>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">Full Name *</div>
+                        <input type="text" placeholder="Enter full name" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">Email *</div>
+                        <input type="email" placeholder="Enter email address" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                        <div style="font-size: 12px; font-weight: 500; color: #94A3B8; margin-top: 6px;">Example: john@example.com</div>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; justify-content: flex-end; border-top: 1px solid #E3ECFC; padding-top: 20px;">
+                        <button style="background: white; color: #0C2472; border: 1px solid #E3ECFC; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Cancel</button>
+                        <button style="background: #1D4ED8; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;">Create Lead</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: RESPONSIVE TYPOGRAPHY -->
+            <section>
+                <h2>📱 5. Responsive Typography — Mobile vs Desktop</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    On mobile, some font sizes scale down to maintain readability within smaller viewports.
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Desktop</th>
+                            <th>Mobile (&lt;640px)</th>
+                            <th>Reason for Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tiny Badge</strong></td>
+                            <td>10–11px</td>
+                            <td>10–11px</td>
+                            <td>No change — already minimal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Field Label</strong></td>
+                            <td>11.5px</td>
+                            <td>11.5px</td>
+                            <td>No change — labels need to stay readable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Metadata</strong></td>
+                            <td>12px</td>
+                            <td>12px</td>
+                            <td>No change</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Section Header</strong></td>
+                            <td>12px</td>
+                            <td>12px</td>
+                            <td>No change</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Body / Value</strong></td>
+                            <td>14px</td>
+                            <td>14px</td>
+                            <td>No change — primary content stays consistent</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Buttons & Tabs</strong></td>
+                            <td>14px</td>
+                            <td>14px</td>
+                            <td>No change — touch targets need readable text</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Page Hero</strong></td>
+                            <td>20px</td>
+                            <td>18px</td>
+                            <td>Slightly smaller to fit smaller viewport</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="section-note warning">
+                    <strong>⚠️ Mobile Typography Principle:</strong> Never make text smaller than 14px on mobile — it becomes hard to read. The minimum readable font size on mobile is 14px for body text. Button text must also be 14px+ for touch accessibility.
+                </div>
+
+                <h3>CSS Media Query Example</h3>
+                <div class="code-block">
+/* Desktop — default */
+h1 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Mobile — smaller */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 18px;
+  }
+}
+
+/* Tablet — medium */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 20px;  /* Keep same as desktop */
+  }
+}
+                </div>
+            </section>
+
+            <!-- SECTION 6: DARK MODE TYPOGRAPHY -->
+            <section>
+                <h2>🌙 6. Dark Mode Typography Specifications</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Font sizes and weights remain the same in dark mode, but text colors change to maintain contrast. Font rendering may appear slightly different due to anti-aliasing.
+                </p>
+
+                <h3>Text Color Changes — Light → Dark Mode</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Text Type</th>
+                            <th>Light Mode Color</th>
+                            <th>Dark Mode Color</th>
+                            <th>Contrast Ratio (Dark Mode)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Primary Text (Values, Headings)</strong></td>
+                            <td>#0C2472 (Navy)</td>
+                            <td>#D4D4D8 (Light Gray)</td>
+                            <td>12.8:1 (AAA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Secondary Text (Labels)</strong></td>
+                            <td>#334155 (Slate-700)</td>
+                            <td>#71717A (Medium Gray)</td>
+                            <td>4.5:1 (AA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tertiary Text (Hints, Metadata)</strong></td>
+                            <td>#94A3B8 (Slate-400)</td>
+                            <td>#9CA3AF (Light Gray)</td>
+                            <td>4.5:1 (AA)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hero Text (Page Titles)</strong></td>
+                            <td>#0C2472 (Navy)</td>
+                            <td>#F4F4F5 (Almost White)</td>
+                            <td>15.0:1 (AAA)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Dark Mode Typography Implementation</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>Light Mode (Default)</h4>
+                        <div style="margin: 15px 0;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 6px;">NAME</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472; margin-bottom: 8px;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">Created: Jan 15, 2026</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card dark">
+                        <h4 style="color: #D4D4D8;">Dark Mode</h4>
+                        <div style="margin: 15px 0;">
+                            <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8; margin-bottom: 6px;">NAME</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #D4D4D8; margin-bottom: 8px;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #9CA3AF;">Created: Jan 15, 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>CSS Variables for Dark Mode</h3>
+                <div class="code-block">
+:root {
+  /* Light mode — default */
+  --text-primary: #0C2472;
+  --text-secondary: #334155;
+  --text-tertiary: #94A3B8;
+  --text-hero: #0C2472;
+}
+
+[data-theme="dark"] {
+  /* Dark mode overrides */
+  --text-primary: #D4D4D8;
+  --text-secondary: #71717A;
+  --text-tertiary: #9CA3AF;
+  --text-hero: #F4F4F5;
+}
+
+/* Usage in components */
+.label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+                </div>
+            </section>
+
+            <!-- SECTION 7: COMMON MISTAKES -->
+            <section>
+                <h2>❌ 7. Common Typography Mistakes & How to Fix Them</h2>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 1: Inconsistent Font Sizes</h4>
+                    <p><strong>Problem:</strong> Similar elements have slightly different sizes (e.g., one button is 13px, another is 14px)</p>
+                    <p><strong>Why it's wrong:</strong> Breaks visual consistency and signals hierarchy where there is none</p>
+                    <p><strong>Fix:</strong> Use exact pixel values from typography tiers. Measure with <code>getComputedStyle()</code> to verify</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 2: No Letter Spacing on Uppercase</h4>
+                    <p><strong>Problem:</strong> Uppercase field labels are tightly packed and hard to read</p>
+                    <p><strong>Why it's wrong:</strong> Uppercase text has poor character spacing; it needs letter-spacing to be readable</p>
+                    <p><strong>Fix:</strong> Always add <code>letter-spacing: 0.05em</code> to uppercase text</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 3: Poor Dark Mode Contrast</h4>
+                    <p><strong>Problem:</strong> Dark mode text is too light or too dark, making it hard to read</p>
+                    <p><strong>Why it's wrong:</strong> Breaks WCAG accessibility standards</p>
+                    <p><strong>Fix:</strong> Use the specified dark mode text colors. Verify contrast ratio ≥ 4.5:1 with WCAG checker</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 4: Font Weight Confusion</h4>
+                    <p><strong>Problem:</strong> Using font-weight: 500 for body text instead of 600</p>
+                    <p><strong>Why it's wrong:</strong> Medium weight (500) is too light for primary content; Semibold (600) is required</p>
+                    <p><strong>Fix:</strong> Follow exact font weights from tiers. Test visual difference between 500 and 600</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 5: Wrong Line Height</h4>
+                    <p><strong>Problem:</strong> Using line-height: 1.5 for body text (should be 1.6) or 2 for badges</p>
+                    <p><strong>Why it's wrong:</strong> Text becomes too loose or too tight, hurting readability and taking up wrong space</p>
+                    <p><strong>Fix:</strong> Use exact line heights from the table in Section 3</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 6: Font Size Below 14px on Mobile</h4>
+                    <p><strong>Problem:</strong> Scaling down body text to 12px on mobile</p>
+                    <p><strong>Why it's wrong:</strong> Creates accessibility issues for users with low vision; browsers auto-zoom</p>
+                    <p><strong>Fix:</strong> Never go below 14px on mobile. Focus on responsive layout instead</p>
+                </div>
+
+                <div class="tier-card">
+                    <h4>❌ Mistake 7: Using Display Fonts for Body Text</h4>
+                    <p><strong>Problem:</strong> Mixing system fonts with Google Fonts or other web fonts</p>
+                    <p><strong>Why it's wrong:</strong> Adds HTTP requests, slows page load, and breaks system font consistency</p>
+                    <p><strong>Fix:</strong> Stick to system font stack. Only custom fonts if absolutely required (and optimize for performance)</p>
+                </div>
+            </section>
+
+            <!-- SECTION 8: IMPLEMENTATION CHECKLIST -->
+            <section>
+                <h2>✅ 8. Typography Implementation Checklist</h2>
+
+                <div style="background: #F8FAFC; border: 1px solid #E3ECFC; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                    <h4 style="margin-top: 0;">When Adding New Text to a Page:</h4>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Identify the semantic role:</strong> Is this a label, value, heading, timestamp, or button text?
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Select the correct tier:</strong> Use exact size from Typography Tiers table (don't guess)
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Apply font weight:</strong> Use exact font-weight from specifications
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Set line height:</strong> Apply line height from Section 3 table
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>If uppercase, add letter-spacing:</strong> letter-spacing: 0.05em
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Choose text color:</strong> Primary, Secondary, or Tertiary based on importance
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Test in dark mode:</strong> Verify colors meet WCAG AA contrast (4.5:1 minimum)
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Test on mobile:</strong> Verify font size is readable on small screens (≥14px)
+                        </li>
+                        <li style="margin: 10px 0; padding-left: 30px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #1D4ED8;">☐</span>
+                            <strong>Verify with developer tools:</strong> Use getComputedStyle() to confirm final rendered values
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 9: CSS VARIABLES TEMPLATE -->
+            <section>
+                <h2>🎨 9. CSS Variables Template — Ready to Use</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Copy this into your globals.css for complete typography consistency.
+                </p>
+
+                <div class="code-block">
+/* ====== TYPOGRAPHY VARIABLES ====== */
+
+:root {
+  /* Font Stack */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Text Colors — Light Mode */
+  --text-primary: #0C2472;
+  --text-secondary: #334155;
+  --text-tertiary: #94A3B8;
+
+  /* Typography Scales */
+  --fs-xs: 10px;
+  --fs-sm: 11.5px;
+  --fs-md: 12px;
+  --fs-base: 14px;
+  --fs-lg: 20px;
+
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-snug: 1.4;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.6;
+
+  /* Letter Spacing */
+  --ls-normal: 0;
+  --ls-wide: 0.05em;
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] {
+  --text-primary: #D4D4D8;
+  --text-secondary: #71717A;
+  --text-tertiary: #9CA3AF;
+  --text-hero: #F4F4F5;
+}
+
+/* ====== UTILITY CLASSES ====== */
+
+/* Tier 1: Tiny Badge */
+.text-badge {
+  font-family: var(--font-family);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-normal);
+}
+
+/* Tier 2: Field Label */
+.text-label {
+  font-family: var(--font-family);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Tier 3: Metadata */
+.text-metadata {
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-normal);
+  color: var(--text-tertiary);
+}
+
+/* Tier 4: Section Header */
+.text-section-header {
+  font-family: var(--font-family);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Tier 5: Body / Value */
+.text-body {
+  font-family: var(--font-family);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-relaxed);
+  letter-spacing: var(--ls-normal);
+  color: var(--text-primary);
+}
+
+/* Tier 6: Buttons & Tabs */
+.text-button {
+  font-family: var(--font-family);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-normal);
+}
+
+/* Tier 7: Page Hero */
+.text-hero {
+  font-family: var(--font-family);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .text-hero {
+  color: var(--text-hero);
+}
+
+/* Usage in HTML */
+&lt;h1 class="text-hero"&gt;John Smith&lt;/h1&gt;
+&lt;p class="text-body"&gt;Primary content&lt;/p&gt;
+&lt;label class="text-label"&gt;EMAIL&lt;/label&gt;
+&lt;span class="text-metadata"&gt;Created: Jan 15, 2026&lt;/span&gt;
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 13px;">
+                <strong>Typography Guidelines</strong> — Complete font system with all sizes, weights, and usage patterns<br>
+                <strong>Last Updated:</strong> 2026 | <strong>Compatible with:</strong> CRM Design System v1.0
+            </p>
+            <button class="download-btn" onclick="downloadHTML()">📥 Download Typography Guide</button>
+            <p style="margin-top: 15px; font-size: 11px; color: #9CA3AF;">
+                Use this guide as your definitive typography reference. All specifications are final and should not be adjusted by eye.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Typography-Guidelines.html';
+            link.click();
+        }
+    </script>
+</body>
+</html>

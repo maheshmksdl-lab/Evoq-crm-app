@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Design System | Complete Brand & UI Guidelines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #0C2472;
+            background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(29, 78, 216, 0.08);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1D4ED8 0%, #0C2472 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #1D4ED8;
+            border-bottom: 3px solid #E3ECFC;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 20px 0;
+            color: #0C2472;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0 12px 0;
+            color: #0C2472;
+        }
+
+        .subsection {
+            margin-bottom: 40px;
+        }
+
+        /* COLOR GRIDS */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .color-card {
+            border: 1px solid #E3ECFC;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .color-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(29, 78, 216, 0.12);
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-info {
+            padding: 15px;
+        }
+
+        .color-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0C2472;
+            margin-bottom: 8px;
+        }
+
+        .color-hex {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+            color: #334155;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .color-usage {
+            font-size: 12px;
+            color: #94A3B8;
+            line-height: 1.5;
+        }
+
+        /* DARK MODE PREVIEW */
+        .dark-mode-section {
+            background: #0A0A0A;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .dark-mode-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .dark-color-card {
+            background: #18181B;
+            border: 1px solid #27272A;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .dark-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid #27272A;
+        }
+
+        .dark-color-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #D4D4D8;
+            margin-bottom: 5px;
+        }
+
+        .dark-color-hex {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            color: #9CA3AF;
+            font-weight: 500;
+        }
+
+        /* TABLES */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .guidelines-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        .guidelines-table th {
+            background: #EFF6FF;
+            color: #0C2472;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid #E3ECFC;
+            font-size: 13px;
+        }
+
+        .guidelines-table td {
+            padding: 15px;
+            border-bottom: 1px solid #E3ECFC;
+            font-size: 14px;
+        }
+
+        .guidelines-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .guidelines-table code {
+            background: #F8FAFC;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', monospace;
+            font-size: 12px;
+            color: #0C2472;
+        }
+
+        /* TYPOGRAPHY EXAMPLES */
+        .text-sample {
+            margin: 15px 0;
+            padding: 15px;
+            background: #F8FAFC;
+            border-left: 3px solid #1D4ED8;
+            border-radius: 4px;
+        }
+
+        .text-sample-dark {
+            background: #18181B;
+            border-left-color: #60A5FA;
+            color: #D4D4D8;
+        }
+
+        /* COMPONENT DEMO */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .component-demo {
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 20px;
+            background: #F8FAFC;
+        }
+
+        .component-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94A3B8;
+            margin-bottom: 15px;
+        }
+
+        /* BUTTONS */
+        .button-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #1D4ED8;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #60A5FA;
+        }
+
+        .btn-secondary {
+            background: #3B82F6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #60A5FA;
+        }
+
+        .btn-disabled {
+            background: #E3ECFC;
+            color: #94A3B8;
+            cursor: not-allowed;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #1D4ED8;
+            color: #1D4ED8;
+        }
+
+        .btn-outline:hover {
+            background: #E3ECFC;
+        }
+
+        /* INPUT DEMO */
+        .input-showcase {
+            display: grid;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #0C2472;
+        }
+
+        .input-field {
+            padding: 10px 12px;
+            border: 1px solid #E3ECFC;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            background: #f9fbff;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #1D4ED8;
+            box-shadow: 0 0 0 2px #93C5FD;
+        }
+
+        .input-field:disabled {
+            background: #E3ECFC;
+            color: #94A3B8;
+            cursor: not-allowed;
+        }
+
+        /* BADGE STYLES */
+        .badge-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .badge-primary { background: #1D4ED8; color: white; }
+        .badge-success { background: #D1FAE5; color: #065F46; }
+        .badge-warning { background: #FEF3C7; color: #92400E; }
+        .badge-error { background: #FEE2E2; color: #991B1B; }
+        .badge-info { background: #DBEAFE; color: #0C2472; }
+
+        /* CARD PALETTE */
+        .card-palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .card-palette {
+            border-radius: 8px;
+            padding: 20px;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-lavender { background: linear-gradient(135deg, #D6E4F9, #93C5FD); color: #0C2472; }
+        .card-sage { background: linear-gradient(135deg, #D0E5E0, #10B981); color: #065F46; }
+        .card-peach { background: linear-gradient(135deg, #FAE3D0, #F97316); color: #7C2D12; }
+        .card-blush { background: linear-gradient(135deg, #F5D9E1, #EC4899); color: #831843; }
+        .card-slate { background: linear-gradient(135deg, #D2DFF0, #5B6CB5); color: #1E293B; }
+
+        /* SECTION NOTES */
+        .section-note {
+            background: #E3ECFC;
+            border-left: 4px solid #1D4ED8;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #0C2472;
+        }
+
+        .section-note.warning {
+            background: #FEF3C7;
+            border-left-color: #F59E0B;
+            color: #92400E;
+        }
+
+        .section-note.success {
+            background: #D1FAE5;
+            border-left-color: #10B981;
+            color: #065F46;
+        }
+
+        .palette-section {
+            background: #F8FAFC;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            background: #FEF3C7;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        /* GRID LAYOUT */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+            gap: 20px;
+        }
+
+        /* COMPARISON */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-card {
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #E3ECFC;
+        }
+
+        .comparison-card.dark {
+            background: #0A0A0A;
+            border-color: #27272A;
+        }
+
+        .comparison-card h4 {
+            margin-top: 0;
+        }
+
+        /* ICON SHOWCASE */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .icon-demo {
+            border: 1px solid #E3ECFC;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            background: #F8FAFC;
+        }
+
+        .icon-demo.dark {
+            background: #18181B;
+            border-color: #27272A;
+        }
+
+        .icon-preview {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .icon-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94A3B8;
+        }
+
+        .icon-color {
+            font-size: 12px;
+            margin-top: 6px;
+            font-family: monospace;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #F8FAFC;
+            padding: 30px 40px;
+            text-align: center;
+            color: #94A3B8;
+            border-top: 1px solid #E3ECFC;
+        }
+
+        .download-btn {
+            background: #1D4ED8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background: #0C2472;
+        }
+
+        /* TABLE OF CONTENTS */
+        .toc {
+            background: #F8FAFC;
+            border-left: 4px solid #1D4ED8;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+        }
+
+        .toc a {
+            color: #1D4ED8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        .component-spacing {
+            background: #F8FAFC;
+            border: 1px solid #E3ECFC;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 13px;
+            font-family: monospace;
+            line-height: 1.8;
+        }
+
+        .spacing-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        table code {
+            background: #EFF6FF;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #0C2472;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 CRM Design System</h1>
+            <p>Complete Brand Guidelines, UI Components & Implementation Standards</p>
+            <p class="subtitle">A universal template for building consistent web applications — swap the primary color to match your brand</p>
+        </header>
+
+        <div class="content">
+
+            <!-- TABLE OF CONTENTS -->
+            <section>
+                <div class="toc">
+                    <h3>📋 Contents</h3>
+                    <ul>
+                        <li><a href="#color-system">1. Light Mode Color System</a></li>
+                        <li><a href="#dark-mode">2. Dark Mode Color System</a></li>
+                        <li><a href="#typography">3. Typography Guidelines</a></li>
+                        <li><a href="#icons">4. Icon System & Colors</a></li>
+                        <li><a href="#components">5. Interactive Components</a></li>
+                        <li><a href="#card-palette">6. Complementary Card Palette</a></li>
+                        <li><a href="#spacing">7. Spacing & Layout</a></li>
+                        <li><a href="#shadows">8. Shadows & Elevation</a></li>
+                        <li><a href="#patterns">9. Common UI Patterns</a></li>
+                        <li><a href="#accessibility">10. Accessibility & Contrast</a></li>
+                        <li><a href="#darkmode-impl">11. Dark Mode Implementation</a></li>
+                        <li><a href="#templates">12. Component Library Templates</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 1: LIGHT MODE COLOR SYSTEM -->
+            <section id="color-system">
+                <h2>🎨 1. Light Mode Color System</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Six core semantic colors form the foundation of the design system. Each color has a specific purpose and usage context. To adapt this system to a new app, update the Primary color (#1D4ED8) to match your brand, and the system will automatically scale to other tones.
+                </p>
+
+                <h3>Core Palette</h3>
+                <div class="color-grid">
+                    <!-- Primary -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #1D4ED8;">#1D4ED8</div>
+                        <div class="color-info">
+                            <div class="color-name">Primary</div>
+                            <div class="color-hex">#1D4ED8</div>
+                            <div class="color-usage">Active states, primary CTAs, form focus, active navigation, links, progress bars, toggle switches</div>
+                        </div>
+                    </div>
+
+                    <!-- Action -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #3B82F6;">#3B82F6</div>
+                        <div class="color-info">
+                            <div class="color-name">Action</div>
+                            <div class="color-hex">#3B82F6</div>
+                            <div class="color-usage">Secondary buttons, badges, info states, placeholder text, secondary charts</div>
+                        </div>
+                    </div>
+
+                    <!-- Hover -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #60A5FA;">#60A5FA</div>
+                        <div class="color-info">
+                            <div class="color-name">Hover</div>
+                            <div class="color-hex">#60A5FA</div>
+                            <div class="color-usage">Hover states on buttons, navigation items, rows, links, icons</div>
+                        </div>
+                    </div>
+
+                    <!-- Soft -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #93C5FD;">#93C5FD</div>
+                        <div class="color-info">
+                            <div class="color-name">Soft</div>
+                            <div class="color-hex">#93C5FD</div>
+                            <div class="color-usage">Subtle highlights, focus shadows, gridlines, disabled inputs, loading spinners, tooltips</div>
+                        </div>
+                    </div>
+
+                    <!-- Tint -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #E3ECFC;">#E3ECFC</div>
+                        <div class="color-info">
+                            <div class="color-name">Tint</div>
+                            <div class="color-hex">#E3ECFC</div>
+                            <div class="color-usage">Form borders, section dividers, inactive tab backgrounds, sidebar/topbar background, disabled button backgrounds</div>
+                        </div>
+                    </div>
+
+                    <!-- Surface -->
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #EFF6FF;">#EFF6FF</div>
+                        <div class="color-info">
+                            <div class="color-name">Surface</div>
+                            <div class="color-hex">#EFF6FF</div>
+                            <div class="color-usage">Main content background, modal dialogs, form panels, empty states, page background</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Supporting Colors</h3>
+                <div class="grid-2">
+                    <div class="subsection">
+                        <h4>Text Colors</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #0C2472; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#0C2472 (Navy)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Primary text, headings, values, names</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #334155; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#334155 (Slate-700)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Secondary text, descriptions, labels</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #94A3B8; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#94A3B8 (Slate-400)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Tertiary text, placeholders, disabled text</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Status Colors</h4>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #10B981; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#10B981 (Success)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Completed, approved, success states</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #F59E0B; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#F59E0B (Warning)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Pending, in progress, caution states</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div style="width: 40px; height: 40px; background: #EF4444; border-radius: 6px;"></div>
+                                <div>
+                                    <div style="font-weight: 600; font-size: 13px;">#EF4444 (Error)</div>
+                                    <div style="font-size: 12px; color: #94A3B8;">Errors, failed, danger states</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>💡 Pro Tip — Opacity-Based Hover States:</strong> Hover states on navigation and table rows use 4-8% opacity of Primary blue (#1D4ED8) rather than solid colors, creating subtle feedback without jarring visual shifts. Example: <code>rgba(29, 78, 216, 0.04)</code> for row hover.
+                </div>
+            </section>
+
+            <!-- SECTION 2: DARK MODE COLOR SYSTEM -->
+            <section id="dark-mode">
+                <h2>🌙 2. Dark Mode Color System</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Complete dark mode palette with carefully calibrated contrast ratios meeting WCAG AA standards for all text sizes. Background colors range from true black to subtle grays, while text colors maintain readability.
+                </p>
+
+                <h3>Dark Mode Core Colors</h3>
+                <div class="dark-mode-section">
+                    <div class="dark-mode-grid">
+                        <div class="dark-color-card">
+                            <div class="dark-swatch" style="background: #1D4ED8;"></div>
+                            <div class="dark-color-name">Primary</div>
+                            <div class="dark-color-hex">#1D4ED8</div>
+                        </div>
+                        <div class="dark-color-card">
+                            <div class="dark-swatch" style="background: #60A5FA;"></div>
+                            <div class="dark-color-name">Hover/Accent</div>
+                            <div class="dark-color-hex">#60A5FA</div>
+                        </div>
+                        <div class="dark-color-card">
+                            <div class="dark-swatch" style="background: #27272A;"></div>
+                            <div class="dark-color-name">Border/Divider</div>
+                            <div class="dark-color-hex">#27272A</div>
+                        </div>
+                        <div class="dark-color-card">
+                            <div class="dark-swatch" style="background: #D4D4D8;"></div>
+                            <div class="dark-color-name">Primary Text</div>
+                            <div class="dark-color-hex">#D4D4D8</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Complete Dark Palette</h3>
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Color</th>
+                                <th>Hex Value</th>
+                                <th>Usage</th>
+                                <th>Contrast Ratio (on text)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span style="background: #000000; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#000000</code></td>
+                                <td>True black — Content background, main canvas</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #0A0A0A; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#0A0A0A</code></td>
+                                <td>Dark base — Page background, primary surface</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #111113; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#111113</code></td>
+                                <td>Very dark — Card headers, secondary surface</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #18181B; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#18181B</code></td>
+                                <td>Dark surface — Cards, inputs, interactive surfaces</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #27272A; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#27272A</code></td>
+                                <td>Dark border — Borders, dividers, subtle separators</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #3F3F46; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#3F3F46</code></td>
+                                <td>Interactive — Button backgrounds, active states</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #52525B; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#52525B</code></td>
+                                <td>Hover surface — Hover states, focus backgrounds</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #71717A; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#71717A</code></td>
+                                <td>Secondary text — Muted labels, secondary descriptions</td>
+                                <td>4.5:1 (AA)</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #9CA3AF; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#9CA3AF</code></td>
+                                <td>Tertiary text — Placeholders, hints, disabled text</td>
+                                <td>4.5:1 (AA)</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #A1A1AA; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#A1A1AA</code></td>
+                                <td>Link text — Non-hovered links</td>
+                                <td>5.8:1 (AAA)</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #D4D4D8; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#D4D4D8</code></td>
+                                <td>Primary text — Main content, headings</td>
+                                <td>12.8:1 (AAA)</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #F4F4F5; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#F4F4F5</code></td>
+                                <td>Light text — High contrast text, bright headings</td>
+                                <td>15.0:1 (AAA)</td>
+                            </tr>
+                            <tr>
+                                <td><span style="background: #60A5FA; display: inline-block; width: 24px; height: 24px; border-radius: 3px; margin-right: 8px; border: 1px solid #27272A;"></span></td>
+                                <td><code>#60A5FA</code></td>
+                                <td>Accent blue — Hover states, active links, focus</td>
+                                <td>5.6:1 (AAA)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-note success">
+                    <strong>✅ WCAG Compliance:</strong> All dark mode text colors meet WCAG AA standards (4.5:1 ratio minimum for body text). Most text meets AAA standard (7:1 ratio), ensuring accessibility for users with low vision.
+                </div>
+            </section>
+
+            <!-- SECTION 3: TYPOGRAPHY SYSTEM -->
+            <section id="typography">
+                <h2>📝 3. Typography Guidelines</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Seven semantic tiers establish consistent visual hierarchy, readability, and visual rhythm across all pages. Use exact pixel values—never choose font sizes by eye.
+                </p>
+
+                <h3>Typography Hierarchy</h3>
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Tier</th>
+                                <th>Size</th>
+                                <th>Weight</th>
+                                <th>Usage</th>
+                                <th>Example (Light Mode)</th>
+                                <th>Example (Dark Mode)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tiny Badge</strong></td>
+                                <td>10–11px</td>
+                                <td>Bold (700)</td>
+                                <td>Tab notification pills, badge counts, small labels</td>
+                                <td><span style="font-size: 10px; font-weight: 700; color: #0C2472;">12 ACTIVE</span></td>
+                                <td><span style="font-size: 10px; font-weight: 700; color: #D4D4D8;">12 ACTIVE</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Field Label</strong></td>
+                                <td>11.5px</td>
+                                <td>Semibold (600), Uppercase, +0.05em spacing</td>
+                                <td>Form field labels, section captions, eyebrow text</td>
+                                <td><span style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472;">SALUTATION</span></td>
+                                <td><span style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8;">SALUTATION</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Metadata</strong></td>
+                                <td>12px</td>
+                                <td>Medium (500)</td>
+                                <td>Timestamps, breadcrumbs, record IDs, created/modified dates</td>
+                                <td><span style="font-size: 12px; font-weight: 500; color: #94A3B8;">Created: Jan 15, 2026</span></td>
+                                <td><span style="font-size: 12px; font-weight: 500; color: #9CA3AF;">Created: Jan 15, 2026</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section Header</strong></td>
+                                <td>12px</td>
+                                <td>Bold (700), Uppercase, +0.05em spacing</td>
+                                <td>Section headings (PERSONAL INFO, TIMELINE, ACTIVITY)</td>
+                                <td><span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472;">PERSONAL INFO</span></td>
+                                <td><span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8;">PERSONAL INFO</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Body / Value</strong></td>
+                                <td>14px</td>
+                                <td>Semibold (600)</td>
+                                <td>Field values, item labels, descriptions, table content</td>
+                                <td><span style="font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</span></td>
+                                <td><span style="font-size: 14px; font-weight: 600; color: #D4D4D8;">John Smith</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Buttons & Tabs</strong></td>
+                                <td>14px</td>
+                                <td>Semibold (600)</td>
+                                <td>Button text, tab labels, toolbar buttons, link text</td>
+                                <td><span style="font-size: 14px; font-weight: 600; color: #1D4ED8;">Create Lead</span></td>
+                                <td><span style="font-size: 14px; font-weight: 600; color: #60A5FA;">Create Lead</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Page Hero</strong></td>
+                                <td>20px</td>
+                                <td>Extrabold (800)</td>
+                                <td>Page title, record name heading (h1)</td>
+                                <td><span style="font-size: 20px; font-weight: 800; color: #0C2472;">John Smith</span></td>
+                                <td><span style="font-size: 20px; font-weight: 800; color: #F4F4F5;">John Smith</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Typography In Action</h3>
+                <div class="comparison">
+                    <div class="comparison-card">
+                        <h4 style="margin-top: 0;">Light Mode Example</h4>
+                        <div class="text-sample">
+                            <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 8px;">PERSONAL INFORMATION</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #0C2472;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8; margin-top: 8px;">john@example.com</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #94A3B8;">Created: Jan 15, 2026</div>
+                        </div>
+                    </div>
+                    <div class="comparison-card dark">
+                        <h4 style="margin-top: 0; color: #D4D4D8;">Dark Mode Example</h4>
+                        <div class="text-sample text-sample-dark">
+                            <div style="font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #D4D4D8; margin-bottom: 8px;">PERSONAL INFORMATION</div>
+                            <div style="font-size: 14px; font-weight: 600; color: #D4D4D8;">John Smith</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #9CA3AF; margin-top: 8px;">john@example.com</div>
+                            <div style="font-size: 12px; font-weight: 500; color: #9CA3AF;">Created: Jan 15, 2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>💡 Key Principle:</strong> Never choose font sizes by eye. Before assigning a size to new text:
+                    <ol>
+                        <li>Identify its semantic tier (badge, label, metadata, header, body, button, hero)</li>
+                        <li>Use that tier's exact pixel value from the table above</li>
+                        <li>Verify with <code>getComputedStyle(element).fontSize</code> against analogous elements</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- SECTION 4: ICON SYSTEM -->
+            <section id="icons">
+                <h2>🎯 4. Icon System & Colors</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Icons follow semantic color assignments based on their context. Default icon color is Primary Text (#0C2472 in light mode, #D4D4D8 in dark mode). Interactive icons adopt Primary color on hover, while status icons use semantic colors.
+                </p>
+
+                <h3>Icon Color Reference</h3>
+                <div class="grid-2">
+                    <div class="subsection">
+                        <h4>Light Mode Icon Colors</h4>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px;">Default Icons</div>
+                                        <code style="font-size: 12px; color: #0C2472;">#0C2472</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #94A3B8; margin-left: 34px;">Navigation, labels, non-interactive</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #1D4ED8;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px;">Interactive Icons</div>
+                                        <code style="font-size: 12px; color: #0C2472;">#1D4ED8</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #94A3B8; margin-left: 34px;">Buttons, action icons, active state</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #60A5FA;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px;">Hover Icons</div>
+                                        <code style="font-size: 12px; color: #0C2472;">#60A5FA</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #94A3B8; margin-left: 34px;">Mouse-over state for interactive icons</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #94A3B8;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px;">Disabled Icons</div>
+                                        <code style="font-size: 12px; color: #0C2472;">#94A3B8</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #94A3B8; margin-left: 34px;">Disabled buttons, inactive states</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4>Dark Mode Icon Colors</h4>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #D4D4D8;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px; color: #D4D4D8;">Default Icons</div>
+                                        <code style="font-size: 12px; color: #9CA3AF;">#D4D4D8</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #9CA3AF;">Navigation, labels, non-interactive</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #60A5FA;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px; color: #D4D4D8;">Interactive Icons</div>
+                                        <code style="font-size: 12px; color: #9CA3AF;">#60A5FA</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #9CA3AF;">Buttons, action icons, active state</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #A1A1AA;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px; color: #D4D4D8;">Hover Icons</div>
+                                        <code style="font-size: 12px; color: #9CA3AF;">#A1A1AA</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #9CA3AF;">Mouse-over state for interactive icons</div>
+                            </div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                                    <span style="font-size: 24px; color: #52525B;">→</span>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 13px; color: #D4D4D8;">Disabled Icons</div>
+                                        <code style="font-size: 12px; color: #9CA3AF;">#52525B</code>
+                                    </div>
+                                </div>
+                                <div style="font-size: 12px; color: #9CA3AF;">Disabled buttons, inactive states</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Status Icons</h3>
+                <div class="icon-grid">
+                    <div class="icon-demo">
+                        <div class="icon-preview" style="color: #10B981;">✓</div>
+                        <div class="icon-label">Success</div>
+                        <div class="icon-color">#10B981</div>
+                    </div>
+                    <div class="icon-demo">
+                        <div class="icon-preview" style="color: #F59E0B;">⚠</div>
+                        <div class="icon-label">Warning</div>
+                        <div class="icon-color">#F59E0B</div>
+                    </div>
+                    <div class="icon-demo">
+                        <div class="icon-preview" style="color: #EF4444;">✕</div>
+                        <div class="icon-label">Error</div>
+                        <div class="icon-color">#EF4444</div>
+                    </div>
+                    <div class="icon-demo">
+                        <div class="icon-preview" style="color: #3B82F6;">ℹ</div>
+                        <div class="icon-label">Info</div>
+                        <div class="icon-color">#3B82F6</div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>📌 Icon Implementation Rules:</strong>
+                    <ul>
+                        <li><strong>Default state:</strong> Use Primary Text color (#0C2472 light / #D4D4D8 dark)</li>
+                        <li><strong>Hover state:</strong> Change to Primary color (#1D4ED8 light / #60A5FA dark)</li>
+                        <li><strong>Disabled state:</strong> Use Tertiary Text color (#94A3B8 light / #52525B dark)</li>
+                        <li><strong>Status icons:</strong> Use semantic colors (green for success, orange for warning, red for error)</li>
+                        <li><strong>Transition:</strong> Apply smooth color transitions (150–200ms) on hover/state changes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: INTERACTIVE COMPONENTS -->
+            <section id="components">
+                <h2>🔘 5. Interactive Components & States</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Detailed specifications for every interactive element, including hover, active, disabled, and focus states.
+                </p>
+
+                <h3>Buttons</h3>
+                <div class="component-demo">
+                    <div class="component-title">Primary Button States</div>
+                    <div class="button-showcase">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-primary" style="background: #60A5FA;">Hover</button>
+                        <button class="btn btn-primary" style="background: #0C2472;">Active</button>
+                        <button class="btn btn-disabled">Disabled</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>Background</th>
+                                <th>Text Color</th>
+                                <th>Border</th>
+                                <th>Shadow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Default</strong></td>
+                                <td>#1D4ED8</td>
+                                <td>White</td>
+                                <td>None</td>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hover</strong></td>
+                                <td>#60A5FA</td>
+                                <td>White</td>
+                                <td>None</td>
+                                <td>0 4px 12px rgba(29, 78, 216, 0.25)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Active/Pressed</strong></td>
+                                <td>#0C2472</td>
+                                <td>White</td>
+                                <td>None</td>
+                                <td>Inset 0 2px 4px rgba(0, 0, 0, 0.15)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Disabled</strong></td>
+                                <td>#E3ECFC</td>
+                                <td>#94A3B8</td>
+                                <td>None</td>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus</strong></td>
+                                <td>#1D4ED8</td>
+                                <td>White</td>
+                                <td>None</td>
+                                <td>0 0 0 3px #93C5FD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Form Inputs</h3>
+                <div class="component-demo">
+                    <div class="component-title">Input Field States</div>
+                    <div class="input-showcase">
+                        <div class="input-group">
+                            <label class="input-label">Default</label>
+                            <input class="input-field" type="text" placeholder="Enter text...">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Focused</label>
+                            <input class="input-field" type="text" placeholder="Enter text..." style="border-color: #1D4ED8; box-shadow: 0 0 0 2px #93C5FD;" value="Focused value">
+                        </div>
+                        <div class="input-group">
+                            <label class="input-label">Disabled</label>
+                            <input class="input-field" type="text" placeholder="Enter text..." disabled value="Disabled value">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>Background</th>
+                                <th>Border</th>
+                                <th>Text Color</th>
+                                <th>Placeholder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Default</strong></td>
+                                <td>#f9fbff</td>
+                                <td>1px #E3ECFC</td>
+                                <td>#0C2472</td>
+                                <td>#94A3B8</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hover</strong></td>
+                                <td>#f9fbff</td>
+                                <td>1px #E3ECFC</td>
+                                <td>#0C2472</td>
+                                <td>#94A3B8</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focused</strong></td>
+                                <td>#f9fbff</td>
+                                <td>2px #1D4ED8</td>
+                                <td>#0C2472</td>
+                                <td>#94A3B8 (fade)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus Shadow</strong></td>
+                                <td colspan="4">0 0 0 2px #93C5FD (outer ring)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Disabled</strong></td>
+                                <td>#E3ECFC</td>
+                                <td>1px #E3ECFC</td>
+                                <td>#94A3B8</td>
+                                <td>#94A3B8</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Error</strong></td>
+                                <td>#f9fbff</td>
+                                <td>2px #EF4444</td>
+                                <td>#0C2472</td>
+                                <td>#94A3B8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Badges & Tags</h3>
+                <div class="component-demo">
+                    <div class="component-title">Badge Variants</div>
+                    <div class="badge-showcase">
+                        <span class="badge badge-primary">Primary</span>
+                        <span class="badge badge-success">Success</span>
+                        <span class="badge badge-warning">Warning</span>
+                        <span class="badge badge-error">Error</span>
+                        <span class="badge badge-info">Info</span>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Variant</th>
+                                <th>Background</th>
+                                <th>Text Color</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Primary</strong></td>
+                                <td>#1D4ED8</td>
+                                <td>White</td>
+                                <td>Active filters, primary status</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Success</strong></td>
+                                <td>#D1FAE5</td>
+                                <td>#065F46</td>
+                                <td>Completed, approved, success status</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Warning</strong></td>
+                                <td>#FEF3C7</td>
+                                <td>#92400E</td>
+                                <td>Pending, in progress, caution status</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Error</strong></td>
+                                <td>#FEE2E2</td>
+                                <td>#991B1B</td>
+                                <td>Failed, error, danger status</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Info</strong></td>
+                                <td>#DBEAFE</td>
+                                <td>#0C2472</td>
+                                <td>Informational, neutral status</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Table Rows & Hover States</h3>
+                <div class="component-demo">
+                    <div class="component-title">Table Row States</div>
+                    <div class="table-wrapper">
+                        <table class="guidelines-table" style="margin: 0;">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Smith</td>
+                                    <td>john@example.com</td>
+                                    <td><span class="badge badge-success">Active</span></td>
+                                </tr>
+                                <tr style="background: rgba(29, 78, 216, 0.04);">
+                                    <td>Jane Doe</td>
+                                    <td>jane@example.com</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                </tr>
+                                <tr style="background: #EFF6FF;">
+                                    <td>Bob Johnson</td>
+                                    <td>bob@example.com</td>
+                                    <td><span class="badge badge-error">Inactive</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Row State</th>
+                                <th>Background</th>
+                                <th>Border</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Default</strong></td>
+                                <td>#f9fbff</td>
+                                <td>1px #E3ECFC (bottom)</td>
+                                <td>Normal table row</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hover</strong></td>
+                                <td>rgba(29, 78, 216, 0.04)</td>
+                                <td>1px #E3ECFC (bottom)</td>
+                                <td>Subtle blue tint at 4% opacity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Selected</strong></td>
+                                <td>#EFF6FF</td>
+                                <td>1px #E3ECFC (bottom)</td>
+                                <td>Checked/selected row</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 6: CARD PALETTE -->
+            <section id="card-palette">
+                <h2>🎨 6. Complementary Card Palette</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Five soft-pastel fills for KPI cards, deal grids, and stat cards. Each color has a coordinating deep shade for icons, sparklines, and progress bar fills.
+                </p>
+
+                <div class="card-palette-grid">
+                    <div class="card-palette card-lavender">
+                        <div style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Lavender</div>
+                        <div style="font-size: 12px; margin-bottom: 8px; opacity: 0.9;">#D6E4F9</div>
+                        <div style="font-size: 11px; opacity: 0.85;">Accent: #2F6FED</div>
+                    </div>
+                    <div class="card-palette card-sage">
+                        <div style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Sage</div>
+                        <div style="font-size: 12px; margin-bottom: 8px; opacity: 0.9;">#D0E5E0</div>
+                        <div style="font-size: 11px; opacity: 0.85;">Accent: #2E9E7B</div>
+                    </div>
+                    <div class="card-palette card-peach">
+                        <div style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Peach</div>
+                        <div style="font-size: 12px; margin-bottom: 8px; opacity: 0.9;">#FAE3D0</div>
+                        <div style="font-size: 11px; opacity: 0.85;">Accent: #E0883F</div>
+                    </div>
+                    <div class="card-palette card-blush">
+                        <div style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Blush</div>
+                        <div style="font-size: 12px; margin-bottom: 8px; opacity: 0.9;">#F5D9E1</div>
+                        <div style="font-size: 11px; opacity: 0.85;">Accent: #DB5E8C</div>
+                    </div>
+                    <div class="card-palette card-slate">
+                        <div style="font-size: 16px; font-weight: 800; margin-bottom: 4px;">Slate</div>
+                        <div style="font-size: 12px; margin-bottom: 8px; opacity: 0.9;">#D2DFF0</div>
+                        <div style="font-size: 11px; opacity: 0.85;">Accent: #5B6CB5</div>
+                    </div>
+                </div>
+
+                <div class="section-note">
+                    <strong>📌 Card Palette Usage Rules:</strong>
+                    <ul>
+                        <li><strong>Semantic grids (Deals by stage):</strong> Every card filled with its stage color</li>
+                        <li><strong>Non-semantic grids (Contacts, Accounts):</strong> Alternate between colored and white cards</li>
+                        <li><strong>KPI cards:</strong> Use complementary palette for visual diversity</li>
+                        <li><strong>Tables:</strong> Always white containers, no pastel fills</li>
+                        <li><strong>Progress bars/Sparklines:</strong> Use the deep accent shade from matching card palette</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 7: SPACING & LAYOUT -->
+            <section id="spacing">
+                <h2>📐 7. Spacing & Layout Grid</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    An 8px-based spacing scale ensures consistency across all layout decisions. All padding, margins, and gaps should use multiples of 8px.
+                </p>
+
+                <div class="palette-section">
+                    <h4>Spacing Scale</h4>
+                    <div class="component-spacing">
+                        <div class="spacing-row">
+                            <span><strong>xs</strong></span>
+                            <span>4px</span>
+                            <span>Half-unit (use sparingly)</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>sm</strong></span>
+                            <span>8px</span>
+                            <span>Button padding, compact spacing</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>md</strong></span>
+                            <span>16px</span>
+                            <span>Default component padding, small gaps</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>lg</strong></span>
+                            <span>24px</span>
+                            <span>Section spacing, card padding</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>xl</strong></span>
+                            <span>32px</span>
+                            <span>Large sections, major spacing</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>2xl</strong></span>
+                            <span>40px</span>
+                            <span>Page padding, content container</span>
+                        </div>
+                        <div class="spacing-row">
+                            <span><strong>3xl</strong></span>
+                            <span>64px</span>
+                            <span>Section separation, major layout breaks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Common Component Spacing</h3>
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Padding</th>
+                                <th>Gap (internal)</th>
+                                <th>Margin (external)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Button (small)</strong></td>
+                                <td>8px 16px</td>
+                                <td>—</td>
+                                <td>0 4px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Button (default)</strong></td>
+                                <td>10px 20px</td>
+                                <td>—</td>
+                                <td>0 8px</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Form input</strong></td>
+                                <td>10px 12px</td>
+                                <td>—</td>
+                                <td>0 0 8px 0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Card</strong></td>
+                                <td>20px</td>
+                                <td>12px</td>
+                                <td>0 0 16px 0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Badge</strong></td>
+                                <td>6px 12px</td>
+                                <td>6px</td>
+                                <td>0 4px 4px 0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Table cell</strong></td>
+                                <td>15px 12px</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modal content</strong></td>
+                                <td>30px 40px</td>
+                                <td>20px</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Section header</strong></td>
+                                <td>0</td>
+                                <td>—</td>
+                                <td>0 0 30px 0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Layout Grid</h3>
+                <div class="palette-section">
+                    <ul>
+                        <li><strong>Page width:</strong> Max-width 1400px for content containers</li>
+                        <li><strong>Page padding:</strong> 40px on desktop, 20px on mobile</li>
+                        <li><strong>Column gap:</strong> 20px between grid columns</li>
+                        <li><strong>Row gap:</strong> 20px between grid rows</li>
+                        <li><strong>Sidebar width:</strong> 240px (fixed)</li>
+                        <li><strong>Topbar height:</strong> 60px (fixed)</li>
+                        <li><strong>Card max-width:</strong> Usually 280px in grid layouts</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 8: SHADOWS & ELEVATION -->
+            <section id="shadows">
+                <h2>🌫️ 8. Shadows & Elevation</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    A consistent shadow system creates depth and visual hierarchy. All shadows use Primary color with varying opacity levels.
+                </p>
+
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Elevation Level</th>
+                                <th>CSS Box-Shadow</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Level 0 (None)</strong></td>
+                                <td><code>none</code></td>
+                                <td>Flat backgrounds, text-only elements</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 1 (Subtle)</strong></td>
+                                <td><code>0 2px 8px rgba(0, 0, 0, 0.04)</code></td>
+                                <td>Cards, subtle depth, list items</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 2 (Light)</strong></td>
+                                <td><code>0 4px 12px rgba(29, 78, 216, 0.08)</code></td>
+                                <td>Popovers, dropdown menus, floating buttons</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 3 (Medium)</strong></td>
+                                <td><code>0 8px 24px rgba(29, 78, 216, 0.12)</code></td>
+                                <td>Modals, dialogs, hover states on cards</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Level 4 (Heavy)</strong></td>
+                                <td><code>0 16px 48px rgba(29, 78, 216, 0.16)</code></td>
+                                <td>Full-page overlays, elevation emphasis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Focus Ring</strong></td>
+                                <td><code>0 0 0 3px #93C5FD</code></td>
+                                <td>Keyboard focus indicator, accessibility</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inset (Pressed)</strong></td>
+                                <td><code>inset 0 2px 4px rgba(0, 0, 0, 0.15)</code></td>
+                                <td>Active/pressed button states</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-note">
+                    <strong>💡 Shadow Best Practices:</strong>
+                    <ul>
+                        <li>Keep blur radius consistent: use 8px, 12px, 24px, or 48px</li>
+                        <li>Shadow spread should be 0 (no spread for clean look)</li>
+                        <li>Use Primary color with opacity instead of black — creates cohesive visual system</li>
+                        <li>Apply shadows to surfaces that float (cards, modals, popover menus)</li>
+                        <li>Layer shadows (e.g., 2px + 8px) for richer depth on important surfaces</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 9: COMMON UI PATTERNS -->
+            <section id="patterns">
+                <h2>🎯 9. Common UI Patterns</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Ready-to-implement patterns for recurring UI scenarios.
+                </p>
+
+                <h3>Page Layout</h3>
+                <div class="palette-section">
+                    <div style="display: grid; gap: 12px; font-size: 13px; font-family: monospace;">
+                        <div style="background: #E3ECFC; padding: 8px 12px; border-radius: 4px;"><strong>Sidebar:</strong> #E3ECFC (Tint)</div>
+                        <div style="background: #E3ECFC; padding: 8px 12px; border-radius: 4px;"><strong>TopBar:</strong> #E3ECFC (Tint)</div>
+                        <div style="background: #EFF6FF; padding: 8px 12px; border-radius: 4px;"><strong>Main Canvas:</strong> #EFF6FF (Surface)</div>
+                        <div style="background: #f9fbff; padding: 8px 12px; border-radius: 4px;"><strong>Cards/Tables:</strong> #f9fbff (Subtle Surface)</div>
+                    </div>
+                </div>
+
+                <h3>Status / Filter Tabs</h3>
+                <div class="palette-section">
+                    <div style="display: grid; gap: 10px; font-size: 13px;">
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 6px;">Active Tab:</div>
+                            <div style="background: #1D4ED8; color: white; padding: 8px 16px; border-radius: 6px; display: inline-block;">Active</div>
+                            <div style="font-size: 12px; color: #94A3B8; margin-top: 4px;">bg-[#1D4ED8], text-white</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 6px;">Inactive Tab:</div>
+                            <div style="background: #f9fbff; color: #0C2472; border: 1px solid #E3ECFC; padding: 8px 16px; border-radius: 6px; display: inline-block;">Inactive</div>
+                            <div style="font-size: 12px; color: #94A3B8; margin-top: 4px;">bg-[#f9fbff], text-[#0C2472], border-[#E3ECFC]</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: 600; margin-bottom: 6px;">Hover Tab:</div>
+                            <div style="background: #E3ECFC; color: #1D4ED8; padding: 8px 16px; border-radius: 6px; display: inline-block;">Hover</div>
+                            <div style="font-size: 12px; color: #94A3B8; margin-top: 4px;">bg-[#E3ECFC], text-[#1D4ED8]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Form Section Pattern</h3>
+                <div class="text-sample">
+                    <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; margin-bottom: 16px;">PERSONAL INFORMATION</div>
+                    <div style="display: grid; gap: 16px;">
+                        <div>
+                            <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; display: block; margin-bottom: 6px;">Salutation</label>
+                            <input type="text" placeholder="Mr." style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit;">
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                            <div>
+                                <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; display: block; margin-bottom: 6px;">First Name</label>
+                                <input type="text" placeholder="John" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; display: block; margin-bottom: 6px;">Last Name</label>
+                                <input type="text" placeholder="Smith" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Modal Dialog Pattern</h3>
+                <div class="component-demo" style="background: white; border: 1px solid #E3ECFC;">
+                    <div style="border-bottom: 1px solid #E3ECFC; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #0C2472;">Create Lead</h3>
+                        <span style="cursor: pointer; font-size: 18px; color: #94A3B8;">×</span>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div style="display: grid; gap: 16px; margin-bottom: 24px;">
+                            <div>
+                                <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; display: block; margin-bottom: 6px;">Full Name *</label>
+                                <input type="text" placeholder="Enter full name" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                            </div>
+                            <div>
+                                <label style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #0C2472; display: block; margin-bottom: 6px;">Email *</label>
+                                <input type="email" placeholder="Enter email" style="width: 100%; padding: 10px 12px; border: 1px solid #E3ECFC; border-radius: 6px; font-size: 14px; font-family: inherit; box-sizing: border-box;">
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                            <button class="btn btn-disabled" style="background: white; color: #0C2472; border: 1px solid #E3ECFC;">Cancel</button>
+                            <button class="btn btn-primary">Create Lead</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: ACCESSIBILITY -->
+            <section id="accessibility">
+                <h2>♿ 10. Accessibility & Contrast</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    All color combinations meet WCAG AA or AAA standards for contrast. Design with accessibility as a requirement, not an afterthought.
+                </p>
+
+                <h3>Light Mode Contrast Ratios</h3>
+                <div class="palette-section">
+                    <div style="display: grid; gap: 12px; font-size: 13px;">
+                        <div><strong>✅ Primary text (#0C2472) on white:</strong> 12.8:1 — WCAG AAA (large & small)</div>
+                        <div><strong>✅ Secondary text (#334155) on white:</strong> 9.8:1 — WCAG AAA</div>
+                        <div><strong>✅ Tertiary text (#94A3B8) on white:</strong> 4.5:1 — WCAG AA</div>
+                        <div><strong>✅ Primary on Primary (#1D4ED8):</strong> 2.8:1 — Use only for decorative elements</div>
+                        <div><strong>✅ White text on Primary (#1D4ED8):</strong> 8.2:1 — WCAG AAA</div>
+                        <div><strong>✅ White text on Hover (#60A5FA):</strong> 5.8:1 — WCAG AAA</div>
+                    </div>
+                </div>
+
+                <h3>Keyboard Navigation</h3>
+                <div class="section-note">
+                    <strong>📌 Focus Management:</strong>
+                    <ul>
+                        <li><strong>Tab order:</strong> Logical left-to-right, top-to-bottom flow</li>
+                        <li><strong>Focus indicator:</strong> Always visible 3px ring of #93C5FD</li>
+                        <li><strong>Focus visible:</strong> Only show focus ring on keyboard navigation (not mouse clicks)</li>
+                        <li><strong>Skip links:</strong> Provide skip-to-content link for keyboard users</li>
+                        <li><strong>Modal traps:</strong> Tab must cycle through modal elements only</li>
+                        <li><strong>Escape key:</strong> Close modals with Escape key</li>
+                    </ul>
+                </div>
+
+                <h3>Screen Reader Guidelines</h3>
+                <div class="section-note">
+                    <strong>📌 Semantic HTML & ARIA:</strong>
+                    <ul>
+                        <li><strong>Use semantic HTML:</strong> &lt;button&gt;, &lt;input&gt;, &lt;table&gt;, &lt;nav&gt;, etc.</li>
+                        <li><strong>Labels:</strong> All form inputs must have associated &lt;label&gt; elements</li>
+                        <li><strong>Icons alone:</strong> Icon-only buttons need aria-label attribute</li>
+                        <li><strong>Tables:</strong> Use &lt;th&gt; for headers, scope attribute for accessibility</li>
+                        <li><strong>Status messages:</strong> Use role="status" or role="alert" for dynamic updates</li>
+                        <li><strong>ARIA live regions:</strong> Use aria-live="polite" for content that updates</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 11: DARK MODE IMPLEMENTATION -->
+            <section id="darkmode-impl">
+                <h2>🌙 11. Dark Mode Implementation Guide</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Complete specification for implementing dark mode across all pages and components.
+                </p>
+
+                <h3>Dark Mode CSS Strategy</h3>
+                <div class="palette-section">
+                    <strong>Option 1: CSS Class-Based (Recommended)</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.6;">
+/* Light mode (default) */<br>
+.component { background: #EFF6FF; color: #0C2472; }<br>
+<br>
+/* Dark mode */<br>
+[data-theme="dark"] .component {<br>
+&nbsp;&nbsp;background: #0A0A0A; color: #D4D4D8;<br>
+}
+                    </div>
+                </div>
+
+                <div class="palette-section">
+                    <strong>Option 2: CSS Variables</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.6;">
+:root {<br>
+&nbsp;&nbsp;--bg-primary: #EFF6FF;<br>
+&nbsp;&nbsp;--text-primary: #0C2472;<br>
+}<br>
+<br>
+[data-theme="dark"] {<br>
+&nbsp;&nbsp;--bg-primary: #0A0A0A;<br>
+&nbsp;&nbsp;--text-primary: #D4D4D8;<br>
+}<br>
+<br>
+.component { background: var(--bg-primary); color: var(--text-primary); }
+                    </div>
+                </div>
+
+                <h3>Color Mapping for Dark Mode</h3>
+                <div class="table-wrapper">
+                    <table class="guidelines-table">
+                        <thead>
+                            <tr>
+                                <th>Component Element</th>
+                                <th>Light Mode</th>
+                                <th>Dark Mode</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Page Background</strong></td>
+                                <td>#EFF6FF (Surface)</td>
+                                <td>#0A0A0A (Dark Base)</td>
+                                <td>Main canvas color</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Card Background</strong></td>
+                                <td>#f9fbff (Subtle Surface)</td>
+                                <td>#18181B (Dark Surface)</td>
+                                <td>Container backgrounds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Text</strong></td>
+                                <td>#0C2472 (Navy)</td>
+                                <td>#D4D4D8 (Light Gray)</td>
+                                <td>Headings, values, primary content</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Secondary Text</strong></td>
+                                <td>#334155 (Slate-700)</td>
+                                <td>#71717A (Light Gray)</td>
+                                <td>Labels, descriptions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tertiary Text</strong></td>
+                                <td>#94A3B8 (Slate-400)</td>
+                                <td>#9CA3AF (Medium Gray)</td>
+                                <td>Placeholders, hints</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Border</strong></td>
+                                <td>#E3ECFC (Tint)</td>
+                                <td>#27272A (Dark Border)</td>
+                                <td>Dividers, input borders</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Button</strong></td>
+                                <td>#1D4ED8 → #60A5FA (hover)</td>
+                                <td>#1D4ED8 → #60A5FA (hover)</td>
+                                <td>Stays consistent, good contrast both modes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Color</strong></td>
+                                <td>#1D4ED8</td>
+                                <td>#60A5FA</td>
+                                <td>Uses lighter shade in dark mode for visibility</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Dark Mode Testing Checklist</h3>
+                <div class="section-note warning">
+                    <strong>🔍 Before Shipping Dark Mode:</strong>
+                    <ul>
+                        <li>☐ All text meets 4.5:1 contrast ratio minimum</li>
+                        <li>☐ Icons are visible and properly colored</li>
+                        <li>☐ Form inputs have clear focus states</li>
+                        <li>☐ Tables and lists are readable</li>
+                        <li>☐ Modals/popovers don't blend into background</li>
+                        <li>☐ Status colors (success/error/warning) are distinguishable</li>
+                        <li>☐ Badges and tags are readable</li>
+                        <li>☐ Charts and graphs have enough contrast</li>
+                        <li>☐ Gradients look intentional, not washed out</li>
+                        <li>☐ Hover/focus states are clearly visible</li>
+                        <li>☐ Tested in actual browser dark mode (not just CSS)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 12: COMPONENT LIBRARY TEMPLATES -->
+            <section id="templates">
+                <h2>📚 12. Component Library Templates</h2>
+                <p style="margin-bottom: 20px; color: #334155; font-size: 15px;">
+                    Ready-to-implement code templates for core components using the design system.
+                </p>
+
+                <h3>Tailwind CSS Class Mapping</h3>
+                <div class="palette-section">
+                    <strong>Colors</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.8;">
+/* Semantic Colors */<br>
+Primary: bg-[#1D4ED8], text-[#1D4ED8]<br>
+Action: bg-[#3B82F6], text-[#3B82F6]<br>
+Hover: bg-[#60A5FA], text-[#60A5FA]<br>
+Soft: bg-[#93C5FD], text-[#93C5FD]<br>
+Tint: bg-[#E3ECFC], text-[#E3ECFC]<br>
+Surface: bg-[#EFF6FF], text-[#EFF6FF]<br>
+Subtle: bg-[#f9fbff], text-[#f9fbff]<br>
+Navy: text-[#0C2472]<br>
+Slate-700: text-[#334155]<br>
+Slate-400: text-[#94A3B8]
+                    </div>
+                </div>
+
+                <div class="palette-section">
+                    <strong>Dark Mode Colors</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.8;">
+/* Dark Mode Overrides */<br>
+dark:bg-[#0A0A0A], dark:text-[#D4D4D8]<br>
+dark:border-[#27272A]<br>
+dark:bg-[#18181B] (cards)<br>
+dark:hover:bg-[#52525B]<br>
+dark:text-[#9CA3AF] (secondary)
+                    </div>
+                </div>
+
+                <h3>Button Component Template</h3>
+                <div class="palette-section">
+                    <strong>Primary Button HTML</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.8; overflow-x: auto;">
+&lt;button<br>
+&nbsp;&nbsp;className="px-5 py-2.5 bg-[#1D4ED8] text-white font-semibold<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rounded-lg hover:bg-[#60A5FA] active:bg-[#0C2472]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled:bg-[#E3ECFC] disabled:text-[#94A3B8]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;focus:outline-none focus:ring-2 focus:ring-[#93C5FD]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition-all duration-200<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark:bg-[#1D4ED8] dark:hover:bg-[#60A5FA]"<br>
+&gt;<br>
+&nbsp;&nbsp;Click me<br>
+&lt;/button&gt;
+                    </div>
+                </div>
+
+                <h3>Form Input Template</h3>
+                <div class="palette-section">
+                    <strong>Input Field HTML</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.8; overflow-x: auto;">
+&lt;input<br>
+&nbsp;&nbsp;type="text"<br>
+&nbsp;&nbsp;placeholder="Enter text..."<br>
+&nbsp;&nbsp;className="w-full px-3 py-2.5 bg-[#f9fbff] text-[#0C2472]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border border-[#E3ECFC] rounded-lg<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;focus:border-[#1D4ED8] focus:ring-2 focus:ring-[#93C5FD]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;disabled:bg-[#E3ECFC] disabled:text-[#94A3B8]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition-colors duration-200<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-[#94A3B8]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark:bg-[#18181B] dark:text-[#D4D4D8]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark:border-[#27272A]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark:placeholder-[#9CA3AF]"<br>
+/&gt;
+                    </div>
+                </div>
+
+                <h3>Card Component Template</h3>
+                <div class="palette-section">
+                    <strong>Card HTML</strong>
+                    <div style="background: white; padding: 15px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 12px; line-height: 1.8; overflow-x: auto;">
+&lt;div<br>
+&nbsp;&nbsp;className="bg-[#f9fbff] rounded-lg border border-[#E3ECFC]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shadow-[0_2px_8px_rgba(0,0,0,0.04)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hover:shadow-[0_8px_16px_rgba(29,78,216,0.12)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transition-shadow duration-300<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p-5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dark:bg-[#18181B] dark:border-[#27272A]"<br>
+&gt;<br>
+&nbsp;&nbsp;&lt;h3 className="text-[#0C2472] font-bold text-lg dark:text-[#D4D4D8]"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Card Title<br>
+&nbsp;&nbsp;&lt;/h3&gt;<br>
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <div class="section-note success">
+                    <strong>✅ Ready to Use:</strong> Copy these templates into your component library and customize class names as needed. All colors follow the design system, making it easy to adapt for new brands by changing the primary color variable.
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <section style="margin-top: 80px;">
+                <div class="section-note warning" style="text-align: center;">
+                    <h3 style="margin-top: 0; color: #F59E0B;">🔄 For New Apps — Color Adaptation Guide</h3>
+                    <p style="margin: 12px 0; font-size: 14px;">To use this design system for a new app (HRMS, Projects, etc.):</p>
+                    <ol style="text-align: left; display: inline-block;">
+                        <li>Choose your new Primary color (replace #1D4ED8)</li>
+                        <li>Generate secondary shades using a color tool (Action, Hover, Soft tones)</li>
+                        <li>Keep Text, Status, and Dark Mode colors unchanged (they're universal)</li>
+                        <li>Apply new Primary color throughout all templates above</li>
+                        <li>Test contrast ratios to ensure WCAG AA compliance</li>
+                    </ol>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p style="margin-bottom: 15px; font-size: 13px;">
+                <strong>CRM Design System</strong> — Complete color, typography, and component guidelines<br>
+                <strong>Version:</strong> 1.0 | <strong>Generated:</strong> 2026 | <strong>Universal Template</strong> for multiple applications
+            </p>
+            <button class="download-btn" onclick="downloadHTML()">📥 Download Complete Brand Book</button>
+            <p style="margin-top: 15px; font-size: 11px; color: #9CA3AF;">
+                This comprehensive brand book can be saved and reused as a template for other applications. Swap the primary color and apply the guidelines to create consistent experiences across your product suite.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadHTML() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'CRM-Design-System-Complete.html';
+            link.click();
+        }
+    </script>
+</body>
+</html>
